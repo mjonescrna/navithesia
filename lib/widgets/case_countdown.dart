@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 
 class CaseCountdownWidget extends StatefulWidget {
   final int initialCount;
-
-  CaseCountdownWidget({required this.initialCount});
+  const CaseCountdownWidget({Key? key, required this.initialCount})
+    : super(key: key);
 
   @override
   _CaseCountdownWidgetState createState() => _CaseCountdownWidgetState();
@@ -20,7 +20,7 @@ class _CaseCountdownWidgetState extends State<CaseCountdownWidget>
     super.initState();
     _currentCount = widget.initialCount;
     _animationController = AnimationController(
-      duration: Duration(seconds: 1),
+      duration: const Duration(seconds: 1),
       vsync: this,
     );
   }
@@ -31,7 +31,6 @@ class _CaseCountdownWidgetState extends State<CaseCountdownWidget>
         _currentCount--;
       });
       if (_currentCount == 0) {
-        // When countdown reaches 0, trigger a celebration animation.
         _animationController.forward();
       }
     }
@@ -45,30 +44,61 @@ class _CaseCountdownWidgetState extends State<CaseCountdownWidget>
 
   @override
   Widget build(BuildContext context) {
+    // Build a neat Cupertino-style tile for the case countdown.
     return GestureDetector(
-      onTap: () {
-        decrementCount();
-      },
-      child: Column(
-        children: [
-          Text(
-            'Case Countdown: $_currentCount',
-            style: CupertinoTheme.of(context).textTheme.navTitleTextStyle,
-          ),
-          SizeTransition(
-            sizeFactor: _animationController,
-            axis: Axis.vertical,
-            child: Icon(
-              CupertinoIcons.sparkles,
-              color: CupertinoColors.systemYellow,
-              size: 50,
+      onTap: decrementCount,
+      child: Container(
+        padding: const EdgeInsets.all(16),
+        margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+        decoration: BoxDecoration(
+          color: const Color(0xFF008B9F),
+          borderRadius: BorderRadius.circular(12),
+        ),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            const Text(
+              "Case Countdown",
+              style: TextStyle(
+                fontSize: 16,
+                color: CupertinoColors.white,
+                inherit: true,
+              ),
             ),
-          ),
-          Text(
-            'Tap to simulate adding a case',
-            style: CupertinoTheme.of(context).textTheme.textStyle,
-          ),
-        ],
+            const SizedBox(height: 8),
+            Stack(
+              alignment: Alignment.center,
+              children: [
+                Text(
+                  '$_currentCount',
+                  style: const TextStyle(
+                    fontSize: 28,
+                    color: CupertinoColors.white,
+                    inherit: true,
+                  ),
+                ),
+                SizeTransition(
+                  sizeFactor: _animationController,
+                  axis: Axis.vertical,
+                  child: const Icon(
+                    CupertinoIcons.sparkles,
+                    color: CupertinoColors.systemYellow,
+                    size: 50,
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 8),
+            const Text(
+              "Tap to add a case",
+              style: TextStyle(
+                fontSize: 14,
+                color: CupertinoColors.white,
+                inherit: true,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

@@ -5,7 +5,7 @@ class AuthService {
 
   // Simulated login: requires an email containing "@" and a password of at least 6 characters.
   Future<bool> login(String email, String password) async {
-    await Future.delayed(Duration(seconds: 1));
+    await Future.delayed(const Duration(seconds: 1));
     return email.contains('@') && password.length >= 6;
   }
 
@@ -15,7 +15,7 @@ class AuthService {
     String password,
     String school,
   ) async {
-    await Future.delayed(Duration(seconds: 1));
+    await Future.delayed(const Duration(seconds: 1));
     return email.contains('@') && password.length >= 6 && school.isNotEmpty;
   }
 
@@ -26,7 +26,7 @@ class AuthService {
       if (!canCheckBiometrics) return false;
       bool authenticated = await auth.authenticate(
         localizedReason: 'Please authenticate to login',
-        biometricOnly: true,
+        options: const AuthenticationOptions(biometricOnly: true),
       );
       return authenticated;
     } catch (e) {
@@ -36,6 +36,6 @@ class AuthService {
 
   // Simulated password reset.
   Future<void> resetPassword(String email) async {
-    await Future.delayed(Duration(seconds: 1));
+    await Future.delayed(const Duration(seconds: 1));
   }
 }

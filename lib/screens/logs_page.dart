@@ -1,115 +1,78 @@
-import 'dart:convert';
+// logs_page.dart
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import '../models/case_log.dart';
-import '../services/admin_service.dart';
+import 'case_log_repository.dart';
+import 'coa_guidelines.dart';
 
 class LogsPage extends StatefulWidget {
+  const LogsPage({Key? key}) : super(key: key);
+
   @override
-  _LogsPageState createState() => _LogsPageState();
+  State<LogsPage> createState() => _LogsPageState();
 }
 
 class _LogsPageState extends State<LogsPage> {
-  // For demonstration, we use a simple in-memory list of logs.
-  // In a real app, these would be loaded from a local database.
-  List<CaseLog> _logs = [
-    CaseLog(category: 'Special Cases', count: 5),
-    CaseLog(category: 'Anatomical Categories', count: 10),
-    CaseLog(category: 'Methods of Anesthesia', count: 15),
-    CaseLog(category: 'Pharm Agents', count: 3),
-  ];
+  final CaseLogRepository _repository = CaseLogRepository();
 
-  bool _isPushing = false;
-  String _pushStatus = '';
-
-  Future<void> _pushLogs() async {
-    setState(() {
-      _isPushing = true;
-      _pushStatus = 'Pushing logs...';
-    });
-    try {
-      // Convert logs to JSON format.
-      List<Map<String, dynamic>> logsJson =
-          _logs.map((log) => log.toJson()).toList();
-      // Call the AdminService to push logs.
-      bool success = await AdminService.pushLogs(
-        jsonEncode({'logs': logsJson}),
-      );
-      setState(() {
-        _pushStatus =
-            success ? 'Logs successfully pushed!' : 'Failed to push logs.';
-      });
-    } catch (e) {
-      setState(() {
-        _pushStatus = 'Error: $e';
-      });
-    } finally {
-      setState(() {
-        _isPushing = false;
-      });
-    }
+  @override
+  void initState() {
+    super.initState();
+    // Initialize the repository with all COA categories.
+    _repository.initializeCOACategories();
   }
 
   @override
   Widget build(BuildContext context) {
-    return CupertinoPageScaffold(
-      navigationBar: CupertinoNavigationBar(
-        middle: Text('Clinical Experience Logs'),
-      ),
-      child: SafeArea(
-        child: Column(
-          children: [
-            Expanded(
-              child: ListView.builder(
-                itemCount: _logs.length,
-                itemBuilder: (context, index) {
-                  final log = _logs[index];
-                  return Container(
-                    padding: EdgeInsets.all(16),
-                    decoration: BoxDecoration(
-                      border: Border(
-                        bottom: BorderSide(color: CupertinoColors.separator),
-                      ),
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          log.category,
-                          style: CupertinoTheme.of(context).textTheme.textStyle,
-                        ),
-                        Text(
-                          '${log.count}',
-                          style: CupertinoTheme.of(context).textTheme.textStyle,
-                        ),
-                      ],
-                    ),
-                  );
-                },
-              ),
-            ),
-            if (_isPushing)
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: CupertinoActivityIndicator(),
-              ),
-            if (_pushStatus.isNotEmpty)
-              Padding(
-                padding: const EdgeInsets.all(8.0),
+    // Build a list tile for each COA category.
+    List<Widget> logTiles = [];
+    for (var category in COAGuidelines.categories) {
+      int current = _repository.currentCounts[category.name] ?? 0;
+      logTiles.add(
+        Container(
+          padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 8),
+          child: Row(
+            children: [
+              Expanded(
                 child: Text(
-                  _pushStatus,
-                  style: CupertinoTheme.of(context).textTheme.textStyle,
+                  category.name,
+                  style: const TextStyle(
+                    fontSize: 16,
+                    color: CupertinoColors.white,
+                  ),
                 ),
               ),
-            // Button to push logs to the school admin website.
-            Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: CupertinoButton.filled(
-                child: Text('Push Logs to Admin Website'),
-                onPressed: _isPushing ? null : _pushLogs,
+              Text(
+                '$current / ${category.requiredCount}',
+                style: const TextStyle(
+                  fontSize: 16,
+                  color: CupertinoColors.white,
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
+        ),
+      );
+    }
+
+    return CupertinoPageScaffold(
+      backgroundColor: CupertinoColors.black,
+      navigationBar: const CupertinoNavigationBar(
+        backgroundColor: CupertinoColors.black,
+        middle: Text(
+          "Logs",
+          style: TextStyle(color: CupertinoColors.white, fontSize: 16),
+        ),
+      ),
+      child: SafeArea(
+        child: ListView.separated(
+          padding: const EdgeInsets.all(16),
+          itemCount: logTiles.length,
+          separatorBuilder:
+              (context, index) =>
+                  const Divider(color: CupertinoColors.systemGrey, height: 1),
+          itemBuilder: (context, index) {
+            return logTiles[index];
+          },
         ),
       ),
     );
