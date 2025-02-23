@@ -1,22 +1,23 @@
+// lib/screens/home_page.dart
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:confetti/confetti.dart';
+import 'dart:math';
 import '../repository/case_log_repository.dart';
 import 'add_case_page.dart';
 import 'logs_page.dart';
 import 'goals_page.dart';
 import 'message_page.dart';
-import '../widgets/mini_ring.dart';
 
 class HomePage extends StatefulWidget {
   final String residentName;
   final String schoolName;
 
   const HomePage({
-    Key? key,
+    super.key,
     required this.residentName,
     required this.schoolName,
-  }) : super(key: key);
+  });
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -28,11 +29,11 @@ class _HomePageState extends State<HomePage> {
   late ConfettiController _confettiController;
   final CaseLogRepository _repository = CaseLogRepository();
 
-  // The four key categories to display (these can be made configurable)
+  // The four key categories to display on the home screen.
   final List<String> keyCategories = [
     "Total Clinical Hours",
-    "Special Cases - Geriatric 65+ years",
-    "Special Cases - Pediatric 2 to 12 years",
+    "Special Cases - Geriatric (65+ years)",
+    "Special Cases - Pediatric (2 to 12 years)",
     "Obstetrical Management - Analgesia for labor",
   ];
 
@@ -42,6 +43,8 @@ class _HomePageState extends State<HomePage> {
     _confettiController = ConfettiController(
       duration: const Duration(seconds: 3),
     );
+    // Initialize the repository counts from COA guidelines.
+    _repository.initializeCOACategories();
   }
 
   @override
@@ -50,12 +53,15 @@ class _HomePageState extends State<HomePage> {
     super.dispose();
   }
 
-  // For demonstration, simulate logging a case. In a real app, this method
-  // would be called after a successful log.
+  // Simulate logging a case.
+  // In this demo, we update each key category by incrementing its count by 1.
   void _simulateLogCase() {
     setState(() {
-      // Suppose that if a physical status is provided then total countdown updates.
-      // For this demo, we assume the case qualifies.
+      // Update each key category's count.
+      for (var category in keyCategories) {
+        _repository.updateCount(category, 1);
+      }
+      // Also, update the overall case countdown.
       if (_totalCaseCountdown > 0) {
         _totalCaseCountdown--;
         if (_totalCaseCountdown == 0) {
@@ -68,47 +74,89 @@ class _HomePageState extends State<HomePage> {
   // Build the large central case countdown ring.
   Widget _buildLargeCountdown() {
     double percentComplete = (600 - _totalCaseCountdown) / 600;
-    return SizedBox(
-      width: 300,
-      height: 300,
+    int currentCases = 600 - _totalCaseCountdown;
+    bool isCompleted = _totalCaseCountdown == 0;
+
+    return Container(
+      width: double.infinity,
+      padding: const EdgeInsets.symmetric(vertical: 40),
       child: Stack(
         alignment: Alignment.center,
         children: [
-          CircularProgressIndicator(
-            value: percentComplete,
-            strokeWidth: 12,
-            valueColor: const AlwaysStoppedAnimation<Color>(Colors.blueAccent),
-            backgroundColor: Colors.grey[800],
+          SizedBox(
+            width: 250,
+            height: 250,
+            child: CircularProgressIndicator(
+              value: percentComplete,
+              strokeWidth: 3,
+              valueColor: AlwaysStoppedAnimation<Color>(
+                isCompleted
+                    ? Colors.greenAccent
+                    : HSVColor.lerp(
+                      HSVColor.fromColor(Colors.red),
+                      HSVColor.fromColor(Colors.greenAccent),
+                      percentComplete,
+                    )!.toColor(),
+              ),
+              backgroundColor: Colors.grey[800],
+            ),
           ),
           Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisSize: MainAxisSize.min,
             children: [
               Text(
                 '$_totalCaseCountdown',
-                style: const TextStyle(
-                  fontSize: 32,
-                  color: CupertinoColors.white,
-                  fontWeight: FontWeight.bold,
+                style: TextStyle(
+                  fontSize: 72,
+                  color: isCompleted ? Colors.greenAccent : Colors.lightBlue,
+                  fontWeight: FontWeight.w400,
                 ),
               ),
               const SizedBox(height: 4),
               const Text(
-                'Case Countdown',
-                style: TextStyle(fontSize: 16, color: CupertinoColors.white),
+                'Cases Remaining',
+                style: TextStyle(
+                  fontSize: 16,
+                  color: Colors.white,
+                  fontWeight: FontWeight.w300,
+                ),
+              ),
+              const SizedBox(height: 12),
+              Text(
+                'Progress: $currentCases/600',
+                style: const TextStyle(
+                  fontSize: 16,
+                  color: Colors.white,
+                  fontWeight: FontWeight.w400,
+                ),
+              ),
+              const SizedBox(height: 4),
+              Text(
+                '${(percentComplete * 100).toStringAsFixed(1)}% Complete',
+                style: TextStyle(
+                  fontSize: 14,
+                  color: isCompleted ? Colors.greenAccent : Colors.lightBlue,
+                  fontWeight: FontWeight.w400,
+                ),
               ),
             ],
           ),
           Positioned.fill(
             child: ConfettiWidget(
               confettiController: _confettiController,
-              blastDirectionality: BlastDirectionality.explosive,
+              blastDirection: pi / 2,
+              maxBlastForce: 5,
+              minBlastForce: 2,
+              emissionFrequency: 0.05,
+              numberOfParticles: 50,
+              gravity: 0.1,
               shouldLoop: false,
               colors: const [
                 Colors.green,
                 Colors.blue,
-                Colors.purple,
-                Colors.red,
+                Colors.pink,
                 Colors.orange,
+                Colors.purple,
               ],
             ),
           ),
@@ -117,28 +165,73 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  // Build a tile for a key category: grey rectangle with white text on the left and a mini ring on the right.
+  // Build a tile for a key category. Uses the repository to get current and required counts.
   Widget _buildKeyTile(String category) {
     int current = _repository.getCountForCategory(category);
     int required = _repository.getRequiredForCategory(category);
+    double progress = required > 0 ? current / required : 0.0;
+    progress = progress.clamp(0.0, 1.0);
+    bool isCompleted = current >= required && required > 0;
+
     return Container(
       decoration: BoxDecoration(
-        color: Colors.grey[850],
+        color:
+            isCompleted
+                ? Colors.greenAccent.withOpacity(0.2)
+                : Colors.grey[850],
         borderRadius: BorderRadius.circular(8),
       ),
+      margin: const EdgeInsets.only(bottom: 8),
       padding: const EdgeInsets.all(12),
-      child: Row(
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Expanded(
-            child: Text(
-              category,
-              style: const TextStyle(
-                fontSize: 16,
-                color: CupertinoColors.white,
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Expanded(
+                child: Text(
+                  category,
+                  style: const TextStyle(
+                    fontSize: 16,
+                    color: Colors.white,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+              ),
+              const SizedBox(width: 8),
+              Text(
+                '$current/$required',
+                style: TextStyle(
+                  fontSize: 16,
+                  color: isCompleted ? Colors.greenAccent : Colors.grey[300],
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+            ],
+          ),
+          if (!isCompleted) ...[
+            const SizedBox(height: 8),
+            ClipRRect(
+              borderRadius: BorderRadius.circular(4),
+              child: SizedBox(
+                height: 4,
+                child: LinearProgressIndicator(
+                  value: progress,
+                  backgroundColor: Colors.black12,
+                  valueColor: AlwaysStoppedAnimation<Color>(
+                    HSVColor.lerp(
+                      HSVColor.fromColor(Colors.red),
+                      HSVColor.fromColor(Colors.greenAccent),
+                      progress,
+                    )!.toColor(),
+                  ),
+                ),
               ),
             ),
-          ),
-          MiniRing(current: current, required: required, size: 50),
+          ],
         ],
       ),
     );
@@ -148,9 +241,13 @@ class _HomePageState extends State<HomePage> {
     return CupertinoPageScaffold(
       navigationBar: CupertinoNavigationBar(
         backgroundColor: CupertinoColors.black,
-        middle: Text(
-          'Home',
-          style: const TextStyle(color: CupertinoColors.white, fontSize: 18),
+        middle: const Text(
+          'NaviThesia',
+          style: TextStyle(
+            color: CupertinoColors.white,
+            fontSize: 18,
+            fontWeight: FontWeight.bold,
+          ),
         ),
       ),
       backgroundColor: CupertinoColors.black,
@@ -214,27 +311,13 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
               const SizedBox(height: 10),
-              // Grid of four key category tiles.
-              GridView.count(
-                crossAxisCount: 1,
-                shrinkWrap: true,
-                physics: const NeverScrollableScrollPhysics(),
-                childAspectRatio: 5,
-                children:
-                    keyCategories
-                        .map(
-                          (cat) => Padding(
-                            padding: const EdgeInsets.only(bottom: 8),
-                            child: _buildKeyTile(cat),
-                          ),
-                        )
-                        .toList(),
-              ),
+              // Grid (or List) of key category tiles.
+              ...keyCategories.map((cat) => _buildKeyTile(cat)),
               const SizedBox(height: 20),
               // For demonstration, a button to simulate logging a case.
               CupertinoButton.filled(
-                child: const Text('Simulate Log Case'),
                 onPressed: _simulateLogCase,
+                child: const Text('Simulate Log Case'),
               ),
             ],
           ),

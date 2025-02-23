@@ -1,32 +1,48 @@
-// case_log_repository.dart
-import 'coa_guidelines.dart';
+// lib/repository/case_log_repository.dart
+
+import 'coa_guidelines.dart'; // Ensure this file defines COACategory and COAGuidelines.categories as a List<COACategory>
 
 class CaseLogRepository {
-  // Singleton instance.
-  static final CaseLogRepository _instance = CaseLogRepository._internal();
-  factory CaseLogRepository() => _instance;
-  CaseLogRepository._internal();
+  final Map<String, int> _categoryCounts = {};
+  final Map<String, int> _requiredCounts = {};
 
-  // Map from category name to current count.
-  final Map<String, int> _currentCounts = {};
-
-  /// Initializes the repository with all COA categories set to zero.
   void initializeCOACategories() {
-    for (var category in COAGuidelines.categories) {
-      _currentCounts[category.name] = 0;
+    // Initialize required counts for key categories
+    _requiredCounts['Total Clinical Hours'] = 600;
+    _requiredCounts['Special Cases - Geriatric (65+ years)'] = 100;
+    _requiredCounts['Special Cases - Pediatric (2 to 12 years)'] = 75;
+    _requiredCounts['Obstetrical Management - Analgesia for labor'] = 40;
+
+    // Initialize current counts to 0
+    _categoryCounts.clear();
+    for (var category in _requiredCounts.keys) {
+      _categoryCounts[category] = 0;
     }
   }
 
-  /// Getter for the current counts.
-  Map<String, int> get currentCounts => _currentCounts;
+  int getCountForCategory(String category) {
+    return _categoryCounts[category] ?? 0;
+  }
 
-  /// Update the count for a given category.
-  void updateCount(String categoryName, int increment) {
-    if (_currentCounts.containsKey(categoryName)) {
-      _currentCounts[categoryName] = _currentCounts[categoryName]! + increment;
-    } else {
-      // If for some reason the category wasn’t initialized, add it.
-      _currentCounts[categoryName] = increment;
-    }
+  int getRequiredForCategory(String category) {
+    return _requiredCounts[category] ?? 0;
+  }
+
+  void updateCount(String category, int increment) {
+    _categoryCounts[category] = (_categoryCounts[category] ?? 0) + increment;
+  }
+
+  Map<String, dynamic> getAllLogs() {
+    Map<String, dynamic> allLogs = {};
+
+    _categoryCounts.forEach((category, count) {
+      allLogs[category] = {
+        'current': count,
+        'required': getRequiredForCategory(category),
+        'lastUpdated': DateTime.now().toIso8601String(),
+      };
+    });
+
+    return allLogs;
   }
 }

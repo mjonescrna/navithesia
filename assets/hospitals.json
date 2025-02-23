@@ -1,0 +1,91 @@
+{
+  "teaching_hospitals": [
+    {
+      "id": "hosp001",
+      "name": "Johns Hopkins Hospital",
+      "address": "1800 Orleans St, Baltimore, MD 21287",
+      "latitude": 39.2964,
+      "longitude": -76.5926,
+      "type": "Teaching Hospital",
+      "level": "Level 1 Trauma"
+    },
+    {
+      "id": "hosp002",
+      "name": "Massachusetts General Hospital",
+      "address": "55 Fruit Street, Boston, MA 02114",
+      "latitude": 42.3632,
+      "longitude": -71.0686,
+      "type": "Teaching Hospital",
+      "level": "Level 1 Trauma"
+    },
+    {
+      "id": "hosp003",
+      "name": "Mayo Clinic Hospital",
+      "address": "5777 E Mayo Blvd, Phoenix, AZ 85054",
+      "latitude": 33.6547,
+      "longitude": -111.9625,
+      "type": "Teaching Hospital",
+      "level": "Level 1 Trauma"
+    }
+  ],
+  "trauma_centers": [
+    {
+      "id": "trauma001",
+      "name": "R Adams Cowley Shock Trauma Center",
+      "address": "22 S Greene St, Baltimore, MD 21201",
+      "latitude": 39.2891,
+      "longitude": -76.6256,
+      "type": "Trauma Center",
+      "level": "Level 1 Trauma"
+    },
+    {
+      "id": "trauma002",
+      "name": "Ryder Trauma Center",
+      "address": "1800 NW 10th Ave, Miami, FL 33136",
+      "latitude": 25.7917,
+      "longitude": -80.2127,
+      "type": "Trauma Center",
+      "level": "Level 1 Trauma"
+    }
+  ],
+  "childrens_hospitals": [
+    {
+      "id": "child001",
+      "name": "Boston Children's Hospital",
+      "address": "300 Longwood Ave, Boston, MA 02115",
+      "latitude": 42.3377,
+      "longitude": -71.1041,
+      "type": "Children's Hospital",
+      "level": "Level 1 Pediatric Trauma"
+    },
+    {
+      "id": "child002",
+      "name": "Children's Hospital of Philadelphia",
+      "address": "3401 Civic Center Blvd, Philadelphia, PA 19104",
+      "latitude": 39.9489,
+      "longitude": -75.1932,
+      "type": "Children's Hospital",
+      "level": "Level 1 Pediatric Trauma"
+    }
+  ],
+  "regional_centers": [
+    {
+      "id": "reg001",
+      "name": "Cleveland Clinic",
+      "address": "9500 Euclid Ave, Cleveland, OH 44195",
+      "latitude": 41.5020,
+      "longitude": -81.6211,
+      "type": "Regional Medical Center",
+      "level": "Level 1 Trauma"
+    },
+    {
+      "id": "reg002",
+      "name": "Stanford Hospital",
+      "address": "300 Pasteur Dr, Stanford, CA 94305",
+      "latitude": 37.4337,
+      "longitude": -122.1751,
+      "type": "Regional Medical Center",
+      "level": "Level 1 Trauma"
+    }
+  ]
+} 

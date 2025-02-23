@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
+import 'package:local_auth/local_auth.dart';
 import '../services/auth_service.dart';
 import 'home_page.dart';
 
@@ -14,15 +15,22 @@ class LoginPage extends StatefulWidget {
   State<LoginPage> createState() => _LoginPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _LoginPageState extends State<LoginPage>
+    with SingleTickerProviderStateMixin {
   AuthMode _authMode = AuthMode.login;
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   final TextEditingController _confirmPasswordController =
       TextEditingController();
+  final LocalAuthentication _localAuth = LocalAuthentication();
   String _selectedSchool = '';
   List<String> _schoolOptions = [];
+  late AnimationController _animationController;
+  late Animation<double> _fadeAnimation;
+  bool _canCheckBiometrics = false;
+  List<BiometricType> _availableBiometrics = [];
+  String _biometricType = '';
 
   final AuthService _authService = AuthService();
   bool _isLoading = false;
@@ -32,6 +40,38 @@ class _LoginPageState extends State<LoginPage> {
   void initState() {
     super.initState();
     _loadSchools();
+    _checkBiometrics();
+    _animationController = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 400),
+    );
+    _fadeAnimation = Tween<double>(begin: 0.0, end: 1.0).animate(
+      CurvedAnimation(parent: _animationController, curve: Curves.easeInOut),
+    );
+    _animationController.forward();
+  }
+
+  Future<void> _checkBiometrics() async {
+    try {
+      _canCheckBiometrics = await _localAuth.canCheckBiometrics;
+      if (_canCheckBiometrics) {
+        _availableBiometrics = await _localAuth.getAvailableBiometrics();
+        if (_availableBiometrics.contains(BiometricType.face)) {
+          _biometricType = 'Face ID';
+        } else if (_availableBiometrics.contains(BiometricType.fingerprint)) {
+          _biometricType = 'Fingerprint';
+        }
+        setState(() {});
+      }
+    } catch (e) {
+      print('Error checking biometrics: $e');
+    }
+  }
+
+  @override
+  void dispose() {
+    _animationController.dispose();
+    super.dispose();
   }
 
   Future<void> _loadSchools() async {
@@ -45,10 +85,14 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   void _toggleAuthMode(AuthMode mode) {
-    setState(() {
-      _authMode = mode;
-      _errorMessage = '';
-    });
+    if (_authMode != mode) {
+      setState(() {
+        _authMode = mode;
+        _errorMessage = '';
+      });
+      _animationController.reset();
+      _animationController.forward();
+    }
   }
 
   Future<void> _submit() async {
@@ -128,262 +172,363 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   Future<void> _authenticateBiometrics() async {
-    bool authenticated = await _authService.authenticateWithBiometrics();
-    if (authenticated) {
-      Navigator.pushReplacement(
-        context,
-        CupertinoPageRoute(
-          builder:
-              (context) => HomePage(
-                residentName: "Resident",
-                schoolName:
-                    _selectedSchool.isEmpty ? "Your School" : _selectedSchool,
-              ),
+    try {
+      final bool authenticated = await _localAuth.authenticate(
+        localizedReason: 'Authenticate to access NaviThesia',
+        options: const AuthenticationOptions(
+          stickyAuth: true,
+          biometricOnly: true,
         ),
       );
-    } else {
+
+      if (authenticated) {
+        if (mounted) {
+          Navigator.pushReplacement(
+            context,
+            CupertinoPageRoute(
+              builder:
+                  (context) => HomePage(
+                    residentName: "Resident",
+                    schoolName:
+                        _selectedSchool.isEmpty
+                            ? "Your School"
+                            : _selectedSchool,
+                  ),
+            ),
+          );
+        }
+      }
+    } catch (e) {
       setState(() {
-        _errorMessage = 'Biometric authentication failed.';
+        _errorMessage = 'Biometric authentication failed: $e';
       });
     }
+  }
+
+  Widget _buildTextField({
+    required TextEditingController controller,
+    required String placeholder,
+    bool isPassword = false,
+    TextInputType? keyboardType,
+  }) {
+    return Container(
+      decoration: BoxDecoration(
+        color: CupertinoColors.systemGrey6.withOpacity(0.1),
+        borderRadius: BorderRadius.circular(12),
+        border: Border.all(color: CupertinoColors.systemGrey4.withOpacity(0.2)),
+      ),
+      child: CupertinoTextField(
+        controller: controller,
+        placeholder: placeholder,
+        padding: const EdgeInsets.all(16),
+        placeholderStyle: TextStyle(
+          color: CupertinoColors.systemGrey.withOpacity(0.8),
+          fontSize: 16,
+        ),
+        style: const TextStyle(color: CupertinoColors.white, fontSize: 16),
+        decoration: null,
+        obscureText: isPassword,
+        keyboardType: keyboardType,
+        cursorColor: CupertinoColors.activeBlue,
+      ),
+    );
   }
 
   @override
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
       backgroundColor: CupertinoColors.black,
-      navigationBar: const CupertinoNavigationBar(
-        middle: Text('NaviThesia Login'),
-      ),
       child: SafeArea(
         child: SingleChildScrollView(
-          padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 24),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              // Auth Mode Segmented Control
-              CupertinoSegmentedControl<AuthMode>(
-                children: {
-                  AuthMode.login: const Padding(
-                    padding: EdgeInsets.all(12),
-                    child: Text('Login', style: TextStyle(fontSize: 16)),
-                  ),
-                  AuthMode.create: const Padding(
-                    padding: EdgeInsets.all(12),
-                    child: Text(
-                      'Create Account',
-                      style: TextStyle(fontSize: 16),
-                    ),
-                  ),
-                },
-                groupValue: _authMode,
-                onValueChanged: (AuthMode value) {
-                  _toggleAuthMode(value);
-                },
-              ),
-              const SizedBox(height: 24),
-
-              // Name field (only if creating account)
-              if (_authMode == AuthMode.create) ...[
-                CupertinoTextField(
-                  controller: _nameController,
-                  placeholder: 'Your Name',
-                  placeholderStyle: const TextStyle(
-                    color: CupertinoColors.systemGrey,
-                    fontSize: 16,
-                  ),
-                  style: const TextStyle(
-                    color: CupertinoColors.white,
-                    fontSize: 16,
+          padding: const EdgeInsets.symmetric(horizontal: 24),
+          child: FadeTransition(
+            opacity: _fadeAnimation,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                const SizedBox(height: 40),
+                // NT Icon
+                Center(
+                  child: Image.asset(
+                    'assets/icons/nt_icon.png',
+                    height: 240,
+                    width: 240,
                   ),
                 ),
                 const SizedBox(height: 24),
-              ],
-
-              // Email field
-              CupertinoTextField(
-                controller: _emailController,
-                placeholder: 'School Email Address',
-                placeholderStyle: const TextStyle(
-                  color: CupertinoColors.systemGrey,
-                  fontSize: 16,
-                ),
-                keyboardType: TextInputType.emailAddress,
-                autocorrect: false,
-                style: const TextStyle(
-                  color: CupertinoColors.white,
-                  fontSize: 16,
-                ),
-              ),
-              const SizedBox(height: 24),
-
-              // Password field
-              CupertinoTextField(
-                controller: _passwordController,
-                placeholder: 'Password (min 6 characters)',
-                placeholderStyle: const TextStyle(
-                  color: CupertinoColors.systemGrey,
-                  fontSize: 16,
-                ),
-                obscureText: true,
-                style: const TextStyle(
-                  color: CupertinoColors.white,
-                  fontSize: 16,
-                ),
-              ),
-
-              // Confirm password field (only if creating account)
-              if (_authMode == AuthMode.create) ...[
-                const SizedBox(height: 24),
-                CupertinoTextField(
-                  controller: _confirmPasswordController,
-                  placeholder: 'Confirm Password',
-                  placeholderStyle: const TextStyle(
-                    color: CupertinoColors.systemGrey,
-                    fontSize: 16,
-                  ),
-                  obscureText: true,
-                  style: const TextStyle(
-                    color: CupertinoColors.white,
-                    fontSize: 16,
-                  ),
-                ),
-                const SizedBox(height: 24),
-
-                // School label
-                Text(
-                  'Select Your School',
-                  style: CupertinoTheme.of(context).textTheme.textStyle
-                      .copyWith(fontSize: 16, color: CupertinoColors.white),
-                ),
-                const SizedBox(height: 8),
-
-                // School Autocomplete
-                Material(
-                  color: Colors.transparent,
-                  child: Autocomplete<String>(
-                    optionsBuilder: (TextEditingValue textEditingValue) {
-                      if (textEditingValue.text.isEmpty) {
-                        return const Iterable<String>.empty();
-                      }
-                      return _schoolOptions.where((String option) {
-                        return option.toLowerCase().contains(
-                          textEditingValue.text.toLowerCase(),
-                        );
-                      });
-                    },
-                    onSelected: (String selection) {
-                      setState(() {
-                        _selectedSchool = selection;
-                      });
-                    },
-                    fieldViewBuilder: (
-                      BuildContext context,
-                      TextEditingController fieldController,
-                      FocusNode fieldFocusNode,
-                      VoidCallback onFieldSubmitted,
-                    ) {
-                      fieldController.text = _selectedSchool;
-                      return CupertinoTextField(
-                        controller: fieldController,
-                        focusNode: fieldFocusNode,
-                        placeholder: 'Type to search your school',
-                        placeholderStyle: const TextStyle(
-                          color: CupertinoColors.systemGrey,
-                          fontSize: 16,
-                        ),
-                        style: const TextStyle(
-                          color: CupertinoColors.white,
-                          fontSize: 16,
-                        ),
-                      );
-                    },
-                    optionsViewBuilder: (
-                      BuildContext context,
-                      AutocompleteOnSelected<String> onSelected,
-                      Iterable<String> options,
-                    ) {
-                      return Align(
-                        alignment: Alignment.topLeft,
-                        child: Material(
-                          color: CupertinoColors.darkBackgroundGray,
-                          elevation: 4.0,
-                          child: ListView.builder(
-                            padding: EdgeInsets.zero,
-                            itemCount: options.length,
-                            shrinkWrap: true,
-                            itemBuilder: (BuildContext context, int index) {
-                              final String option = options.elementAt(index);
-                              return ListTile(
-                                title: Text(
-                                  option,
-                                  style: const TextStyle(
-                                    color: CupertinoColors.white,
-                                    fontSize: 16,
-                                  ),
-                                ),
-                                onTap: () {
-                                  onSelected(option);
-                                },
-                              );
-                            },
-                          ),
-                        ),
-                      );
-                    },
-                  ),
-                ),
-              ],
-
-              const SizedBox(height: 24),
-
-              // Error message
-              if (_errorMessage.isNotEmpty)
-                Text(
-                  _errorMessage,
-                  style: TextStyle(
-                    color: CupertinoColors.systemRed.resolveFrom(context),
-                    fontSize: 16,
-                  ),
-                ),
-
-              if (_isLoading) ...[
-                const SizedBox(height: 16),
-                const CupertinoActivityIndicator(),
-              ],
-              const SizedBox(height: 24),
-
-              // Login/Create button
-              CupertinoButton.filled(
-                onPressed: _submit,
-                child: Text(
-                  _authMode == AuthMode.login ? 'Login' : 'Create Account',
-                  style: const TextStyle(fontSize: 18),
-                ),
-              ),
-
-              // Forgot Password & Biometrics (only in Login mode)
-              if (_authMode == AuthMode.login) ...[
-                const SizedBox(height: 16),
-                CupertinoButton(
-                  onPressed: _forgotPassword,
-                  child: const Text(
-                    'Forgot Password?',
-                    style: TextStyle(fontSize: 16),
-                  ),
-                ),
-                const SizedBox(height: 16),
-                CupertinoButton(
-                  onPressed: _authenticateBiometrics,
-                  child: const Icon(CupertinoIcons.lock_shield, size: 44),
-                ),
+                // App Title
                 const Text(
-                  'Use Face ID / Touch ID',
-                  style: TextStyle(fontSize: 16, color: CupertinoColors.white),
+                  'NaviThesia',
+                  style: TextStyle(
+                    fontSize: 32,
+                    fontWeight: FontWeight.bold,
+                    color: CupertinoColors.white,
+                  ),
                   textAlign: TextAlign.center,
                 ),
+                const SizedBox(height: 8),
+                Text(
+                  'Navigating Your Anesthesia Residency',
+                  style: TextStyle(
+                    fontSize: 16,
+                    color: CupertinoColors.white.withOpacity(0.7),
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+                const SizedBox(height: 40),
+
+                // Auth Mode Selector
+                CupertinoSlidingSegmentedControl<AuthMode>(
+                  backgroundColor: CupertinoColors.systemGrey6.withOpacity(0.1),
+                  thumbColor: CupertinoColors.activeBlue,
+                  groupValue: _authMode,
+                  children: {
+                    AuthMode.login: Padding(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 20,
+                        vertical: 10,
+                      ),
+                      child: Text(
+                        'Login',
+                        style: TextStyle(
+                          color:
+                              _authMode == AuthMode.login
+                                  ? CupertinoColors.white
+                                  : CupertinoColors.systemGrey,
+                          fontSize: 16,
+                        ),
+                      ),
+                    ),
+                    AuthMode.create: Padding(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 20,
+                        vertical: 10,
+                      ),
+                      child: Text(
+                        'Create Account',
+                        style: TextStyle(
+                          color:
+                              _authMode == AuthMode.create
+                                  ? CupertinoColors.white
+                                  : CupertinoColors.systemGrey,
+                          fontSize: 16,
+                        ),
+                      ),
+                    ),
+                  },
+                  onValueChanged: (value) {
+                    if (value != null) _toggleAuthMode(value);
+                  },
+                ),
+                const SizedBox(height: 32),
+
+                // Form Fields
+                if (_authMode == AuthMode.create)
+                  Column(
+                    children: [
+                      _buildTextField(
+                        controller: _nameController,
+                        placeholder: 'Your Name',
+                      ),
+                      const SizedBox(height: 16),
+                    ],
+                  ),
+
+                _buildTextField(
+                  controller: _emailController,
+                  placeholder: 'School Email Address',
+                  keyboardType: TextInputType.emailAddress,
+                ),
+                const SizedBox(height: 16),
+
+                _buildTextField(
+                  controller: _passwordController,
+                  placeholder: 'Password',
+                  isPassword: true,
+                ),
+                const SizedBox(height: 16),
+
+                if (_authMode == AuthMode.create) ...[
+                  _buildTextField(
+                    controller: _confirmPasswordController,
+                    placeholder: 'Confirm Password',
+                    isPassword: true,
+                  ),
+                  const SizedBox(height: 16),
+
+                  Container(
+                    decoration: BoxDecoration(
+                      color: CupertinoColors.systemGrey6.withOpacity(0.1),
+                      borderRadius: BorderRadius.circular(12),
+                      border: Border.all(
+                        color: CupertinoColors.systemGrey4.withOpacity(0.2),
+                      ),
+                    ),
+                    child: Material(
+                      color: Colors.transparent,
+                      child: Autocomplete<String>(
+                        optionsBuilder: (TextEditingValue textEditingValue) {
+                          if (textEditingValue.text.isEmpty) {
+                            return const Iterable<String>.empty();
+                          }
+                          return _schoolOptions.where((String option) {
+                            return option.toLowerCase().contains(
+                              textEditingValue.text.toLowerCase(),
+                            );
+                          });
+                        },
+                        onSelected: (String selection) {
+                          setState(() {
+                            _selectedSchool = selection;
+                          });
+                        },
+                        fieldViewBuilder: (
+                          context,
+                          fieldController,
+                          fieldFocusNode,
+                          onFieldSubmitted,
+                        ) {
+                          return CupertinoTextField(
+                            controller: fieldController,
+                            focusNode: fieldFocusNode,
+                            placeholder: 'Select Your School',
+                            padding: const EdgeInsets.all(16),
+                            placeholderStyle: TextStyle(
+                              color: CupertinoColors.systemGrey.withOpacity(
+                                0.8,
+                              ),
+                              fontSize: 16,
+                            ),
+                            style: const TextStyle(
+                              color: CupertinoColors.white,
+                              fontSize: 16,
+                            ),
+                            decoration: null,
+                          );
+                        },
+                        optionsViewBuilder: (context, onSelected, options) {
+                          return Align(
+                            alignment: Alignment.topLeft,
+                            child: Material(
+                              color: CupertinoColors.darkBackgroundGray,
+                              elevation: 4.0,
+                              child: Container(
+                                constraints: const BoxConstraints(
+                                  maxHeight: 200,
+                                ),
+                                width: MediaQuery.of(context).size.width - 48,
+                                child: ListView.builder(
+                                  padding: EdgeInsets.zero,
+                                  shrinkWrap: true,
+                                  itemCount: options.length,
+                                  itemBuilder: (
+                                    BuildContext context,
+                                    int index,
+                                  ) {
+                                    final option = options.elementAt(index);
+                                    return ListTile(
+                                      title: Text(
+                                        option,
+                                        style: const TextStyle(
+                                          color: CupertinoColors.white,
+                                        ),
+                                      ),
+                                      onTap: () => onSelected(option),
+                                    );
+                                  },
+                                ),
+                              ),
+                            ),
+                          );
+                        },
+                      ),
+                    ),
+                  ),
+                ],
+
+                if (_errorMessage.isNotEmpty) ...[
+                  const SizedBox(height: 16),
+                  Text(
+                    _errorMessage,
+                    style: const TextStyle(
+                      color: CupertinoColors.destructiveRed,
+                      fontSize: 14,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                ],
+
+                const SizedBox(height: 32),
+
+                // Main Action Button
+                SizedBox(
+                  width: double.infinity,
+                  child: CupertinoButton(
+                    padding: const EdgeInsets.symmetric(vertical: 16),
+                    onPressed: _isLoading ? null : _submit,
+                    color: CupertinoColors.activeBlue,
+                    borderRadius: BorderRadius.circular(12),
+                    child:
+                        _isLoading
+                            ? const CupertinoActivityIndicator(
+                              color: CupertinoColors.white,
+                            )
+                            : Text(
+                              _authMode == AuthMode.login
+                                  ? 'Login'
+                                  : 'Create Account',
+                              style: const TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.w600,
+                                color: CupertinoColors.white,
+                              ),
+                            ),
+                  ),
+                ),
+
+                if (_authMode == AuthMode.login) ...[
+                  const SizedBox(height: 16),
+                  CupertinoButton(
+                    onPressed: () => _forgotPassword(),
+                    child: Text(
+                      'Forgot Password?',
+                      style: TextStyle(
+                        color: CupertinoColors.white.withOpacity(0.7),
+                      ),
+                    ),
+                  ),
+                  if (_canCheckBiometrics && _biometricType.isNotEmpty) ...[
+                    const SizedBox(height: 16),
+                    const Divider(color: CupertinoColors.systemGrey4),
+                    const SizedBox(height: 16),
+                    CupertinoButton(
+                      onPressed: _authenticateBiometrics,
+                      color: CupertinoColors.systemGrey6.withOpacity(0.3),
+                      borderRadius: BorderRadius.circular(12),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(
+                            _biometricType == 'Face ID'
+                                ? CupertinoIcons.person_crop_circle_fill
+                                : CupertinoIcons.circle_bottomthird_split,
+                            color: CupertinoColors.white,
+                          ),
+                          const SizedBox(width: 8),
+                          Text(
+                            'Login with $_biometricType',
+                            style: const TextStyle(
+                              color: CupertinoColors.white,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ],
+                const SizedBox(height: 32),
               ],
-            ],
+            ),
           ),
         ),
       ),

@@ -1,0 +1,73 @@
+{
+  "sites": [
+    {
+      "id": "hosp001",
+      "name": "Memorial Regional Hospital",
+      "address": "3501 Johnson Street, Hollywood, FL 33021",
+      "latitude": 26.0187,
+      "longitude": -80.1798,
+      "phoneNumber": "(954) 987-2000",
+      "website": "www.mhs.net/locations/memorial-regional-hospital",
+      "specialties": [
+        "General Surgery",
+        "Cardiac",
+        "Trauma",
+        "Pediatric",
+        "Obstetric"
+      ],
+      "caseVolumes": {
+        "General Surgery": 2500,
+        "Cardiac": 800,
+        "Trauma": 1200,
+        "Pediatric": 1500,
+        "Obstetric": 3000
+      }
+    },
+    {
+      "id": "hosp002",
+      "name": "Cleveland Clinic Florida",
+      "address": "2950 Cleveland Clinic Blvd, Weston, FL 33331",
+      "latitude": 26.0814,
+      "longitude": -80.3677,
+      "phoneNumber": "(954) 659-5000",
+      "website": "www.clevelandclinicflorida.org",
+      "specialties": [
+        "Cardiac",
+        "Neurosurgery",
+        "Orthopedic",
+        "Transplant",
+        "Vascular"
+      ],
+      "caseVolumes": {
+        "Cardiac": 1200,
+        "Neurosurgery": 900,
+        "Orthopedic": 2000,
+        "Transplant": 300,
+        "Vascular": 800
+      }
+    },
+    {
+      "id": "hosp003",
+      "name": "Jackson Memorial Hospital",
+      "address": "1611 NW 12th Avenue, Miami, FL 33136",
+      "latitude": 25.7917,
+      "longitude": -80.2127,
+      "phoneNumber": "(305) 585-1111",
+      "website": "www.jacksonhealth.org/locations/jackson-memorial-hospital",
+      "specialties": [
+        "Trauma",
+        "Transplant",
+        "Pediatric",
+        "Burn",
+        "Obstetric"
+      ],
+      "caseVolumes": {
+        "Trauma": 3000,
+        "Transplant": 500,
+        "Pediatric": 2000,
+        "Burn": 400,
+        "Obstetric": 4000
+      }
+    }
+  ]
+} 

@@ -1,38 +1,29 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class MiniRing extends StatelessWidget {
-  final int current;
-  final int required;
+  final double progress;
   final double size;
+  final Color color;
+  final double strokeWidth;
 
   const MiniRing({
-    Key? key,
-    required this.current,
-    required this.required,
-    this.size = 50,
-  }) : super(key: key);
+    super.key,
+    required this.progress,
+    this.size = 40,
+    required this.color,
+    this.strokeWidth = 3,
+  });
 
   @override
   Widget build(BuildContext context) {
-    double percent = required > 0 ? current / required : 0;
     return SizedBox(
       width: size,
       height: size,
-      child: Stack(
-        alignment: Alignment.center,
-        children: [
-          CircularProgressIndicator(
-            value: percent > 1 ? 1 : percent,
-            strokeWidth: 4,
-            valueColor: AlwaysStoppedAnimation<Color>(Colors.blueAccent),
-            backgroundColor: Colors.grey[800],
-          ),
-          Text(
-            '$current/$required',
-            style: const TextStyle(fontSize: 10, color: CupertinoColors.white),
-          ),
-        ],
+      child: CircularProgressIndicator(
+        value: progress,
+        strokeWidth: strokeWidth,
+        valueColor: AlwaysStoppedAnimation<Color>(color),
+        backgroundColor: Colors.grey[800],
       ),
     );
   }

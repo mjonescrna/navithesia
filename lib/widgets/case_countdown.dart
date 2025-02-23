@@ -1,10 +1,8 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 
 class CaseCountdownWidget extends StatefulWidget {
   final int initialCount;
-  const CaseCountdownWidget({Key? key, required this.initialCount})
-    : super(key: key);
+  const CaseCountdownWidget({super.key, required this.initialCount});
 
   @override
   _CaseCountdownWidgetState createState() => _CaseCountdownWidgetState();
@@ -59,11 +57,7 @@ class _CaseCountdownWidgetState extends State<CaseCountdownWidget>
           children: [
             const Text(
               "Case Countdown",
-              style: TextStyle(
-                fontSize: 16,
-                color: CupertinoColors.white,
-                inherit: true,
-              ),
+              style: TextStyle(fontSize: 16, color: CupertinoColors.white),
             ),
             const SizedBox(height: 8),
             Stack(
@@ -74,14 +68,13 @@ class _CaseCountdownWidgetState extends State<CaseCountdownWidget>
                   style: const TextStyle(
                     fontSize: 28,
                     color: CupertinoColors.white,
-                    inherit: true,
                   ),
                 ),
                 SizeTransition(
                   sizeFactor: _animationController,
                   axis: Axis.vertical,
                   child: const Icon(
-                    CupertinoIcons.sparkles,
+                    CupertinoIcons.star_fill,
                     color: CupertinoColors.systemYellow,
                     size: 50,
                   ),
@@ -91,11 +84,7 @@ class _CaseCountdownWidgetState extends State<CaseCountdownWidget>
             const SizedBox(height: 8),
             const Text(
               "Tap to add a case",
-              style: TextStyle(
-                fontSize: 14,
-                color: CupertinoColors.white,
-                inherit: true,
-              ),
+              style: TextStyle(fontSize: 14, color: CupertinoColors.white),
             ),
           ],
         ),

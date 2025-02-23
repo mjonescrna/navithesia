@@ -1,19 +1,18 @@
 import 'package:flutter/cupertino.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-import 'models/case_log_model.dart'; // Make sure the path is correct.
 import 'screens/login_page.dart';
+import 'models/time_log_entry.dart';
+import 'models/case_entry.dart';
 
-Future<void> main() async {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  // Initialize Hive and Hive Flutter.
+  // Initialize Hive
   await Hive.initFlutter();
 
-  // Register the adapter for CaseLog.
-  Hive.registerAdapter(CaseLogAdapter());
-
-  // Open the Hive box to store case logs.
-  await Hive.openBox<CaseLog>('caseLogs');
+  // Register Hive Adapters
+  Hive.registerAdapter(TimeLogEntryAdapter());
+  Hive.registerAdapter(CaseEntryAdapter());
 
   runApp(const NaviThesiaApp());
 }
@@ -23,32 +22,13 @@ class NaviThesiaApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CupertinoApp(
-      debugShowCheckedModeBanner: false,
+    return const CupertinoApp(
       title: 'NaviThesia',
-      theme: const CupertinoThemeData(
+      theme: CupertinoThemeData(
         brightness: Brightness.dark,
-        primaryColor: CupertinoColors.activeBlue,
-        scaffoldBackgroundColor: CupertinoColors.black,
-        textTheme: CupertinoTextThemeData(
-          textStyle: TextStyle(
-            inherit: true,
-            fontSize: 14,
-            color: CupertinoColors.white,
-          ),
-          navTitleTextStyle: TextStyle(
-            inherit: true,
-            fontSize: 16,
-            color: CupertinoColors.white,
-          ),
-          navLargeTitleTextStyle: TextStyle(
-            inherit: true,
-            fontSize: 28,
-            color: CupertinoColors.white,
-          ),
-        ),
+        primaryColor: CupertinoColors.systemBlue,
       ),
-      home: const LoginPage(),
+      home: LoginPage(),
     );
   }
 }

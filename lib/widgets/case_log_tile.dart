@@ -5,17 +5,36 @@ class CaseLogTile extends StatelessWidget {
   final int currentCount;
 
   const CaseLogTile({
-    Key? key,
+    super.key,
     required this.category,
     required this.currentCount,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
     return CupertinoButton(
       padding: EdgeInsets.zero,
       onPressed: () {
-        // TODO: Navigate to detailed view for this clinical experience category.
+        Navigator.of(context).push(
+          CupertinoPageRoute(
+            builder:
+                (context) => CupertinoPageScaffold(
+                  navigationBar: CupertinoNavigationBar(middle: Text(category)),
+                  child: SafeArea(
+                    child: Center(
+                      child: Text(
+                        'Details for $category\nCurrent Count: $currentCount',
+                        style: const TextStyle(
+                          fontSize: 16,
+                          color: CupertinoColors.white,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                  ),
+                ),
+          ),
+        );
       },
       child: Container(
         padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
@@ -34,7 +53,6 @@ class CaseLogTile extends StatelessWidget {
               style: const TextStyle(
                 fontSize: 16,
                 color: CupertinoColors.white,
-                inherit: true,
               ),
             ),
             Text(
@@ -42,7 +60,6 @@ class CaseLogTile extends StatelessWidget {
               style: const TextStyle(
                 fontSize: 16,
                 color: CupertinoColors.white,
-                inherit: true,
               ),
             ),
           ],

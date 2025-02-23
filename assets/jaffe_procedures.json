@@ -1,0 +1,2691 @@
+{
+  "abdominal": [
+    {
+      "procedureName": "Laparoscopic Cholecystectomy",
+      "estimatedDuration": 2.0,
+      "defaultAssessment": "ASA II",
+      "coaCategories": ["General Anesthesia", "Intra-abdominal"],
+      "commonTechniques": ["ETT", "Rapid Sequence Induction"],
+      "anatomicalLocation": "Abdomen",
+      "jaffeReference": "Chapter 25: Anesthesia for Abdominal Surgery",
+      "commonComplications": [
+        "PONV",
+        "Shoulder Pain",
+        "Pneumoperitoneum effects"
+      ],
+      "specificDetails": {
+        "positioning": "Supine, reverse Trendelenburg",
+        "monitoring": ["Standard ASA", "Train of Four", "Temperature"],
+        "airwayManagement": "ETT with muscle relaxation",
+        "painManagement": ["Multimodal", "Local infiltration"],
+        "fluidManagement": "Maintenance + replacement",
+        "specialConsiderations": [
+          "Pneumoperitoneum effects on ventilation",
+          "CO2 absorption",
+          "Shoulder tip pain"
+        ]
+      }
+    },
+    {
+      "procedureName": "Open Appendectomy",
+      "estimatedDuration": 1.5,
+      "defaultAssessment": "ASA II",
+      "coaCategories": ["General Anesthesia", "Intra-abdominal", "Emergency"],
+      "commonTechniques": ["ETT", "Rapid Sequence Induction"],
+      "anatomicalLocation": "Abdomen",
+      "jaffeReference": "Chapter 25: Anesthesia for Abdominal Surgery",
+      "commonComplications": ["PONV", "Infection risk", "Fluid shifts"],
+      "specificDetails": {
+        "positioning": "Supine",
+        "monitoring": ["Standard ASA", "Temperature"],
+        "airwayManagement": "ETT required",
+        "painManagement": ["Multimodal", "Local infiltration", "Opioids"],
+        "fluidManagement": "Replace deficits + maintenance",
+        "specialConsiderations": [
+          "Full stomach precautions",
+          "Sepsis risk",
+          "Antibiotic timing"
+        ]
+      }
+    },
+    {
+      "procedureName": "Laparoscopic Appendectomy",
+      "estimatedDuration": 1.5,
+      "defaultAssessment": "ASA II",
+      "coaCategories": ["General Anesthesia", "Intra-abdominal", "Emergency"],
+      "commonTechniques": ["ETT", "Rapid Sequence Induction"],
+      "anatomicalLocation": "Abdomen",
+      "jaffeReference": "Chapter 25: Anesthesia for Abdominal Surgery",
+      "commonComplications": ["PONV", "Infection risk", "Port site pain"],
+      "specificDetails": {
+        "positioning": "Supine",
+        "monitoring": ["Standard ASA", "Temperature"],
+        "airwayManagement": "ETT required",
+        "painManagement": ["Multimodal", "Local infiltration", "NSAIDs"],
+        "fluidManagement": "Replace deficits + maintenance",
+        "specialConsiderations": [
+          "Full stomach precautions",
+          "Sepsis risk",
+          "Antibiotic timing"
+        ]
+      }
+    },
+    {
+      "procedureName": "Laparoscopic Colectomy",
+      "estimatedDuration": 3.5,
+      "defaultAssessment": "ASA III",
+      "coaCategories": ["General Anesthesia", "Intra-abdominal"],
+      "commonTechniques": ["ETT", "Arterial Line", "Epidural"],
+      "anatomicalLocation": "Abdomen",
+      "jaffeReference": "Chapter 25: Anesthesia for Abdominal Surgery",
+      "commonComplications": ["Blood loss", "Fluid shifts", "PONV"],
+      "specificDetails": {
+        "positioning": "Modified lithotomy",
+        "monitoring": ["Standard ASA", "Arterial Line", "Temperature"],
+        "airwayManagement": "ETT with muscle relaxation",
+        "painManagement": ["Epidural", "Multimodal"],
+        "fluidManagement": "Goal-directed therapy",
+        "specialConsiderations": [
+          "Pneumoperitoneum effects",
+          "Bowel manipulation",
+          "ERAS protocols"
+        ]
+      }
+    },
+    {
+      "procedureName": "Complex Hepatic Resection",
+      "estimatedDuration": 6.0,
+      "defaultAssessment": "ASA III",
+      "coaCategories": ["General Anesthesia", "Abdominal"],
+      "commonTechniques": ["ETT", "Arterial Line", "CVP"],
+      "anatomicalLocation": "Abdomen",
+      "jaffeReference": "Chapter 25: Abdominal Surgery",
+      "commonComplications": ["Major Blood Loss", "Coagulopathy", "Air Embolism"],
+      "specificDetails": {
+        "positioning": "Modified supine",
+        "monitoring": ["Standard ASA", "Arterial Line", "CVP", "TEE optional"],
+        "airwayManagement": "ETT",
+        "painManagement": ["Epidural", "IV PCA"],
+        "fluidManagement": "Low CVP technique",
+        "specialConsiderations": [
+          "Liver dysfunction",
+          "Coagulation management",
+          "Air embolism precautions"
+        ]
+      }
+    },
+    {
+      "procedureName": "Whipple Procedure",
+      "estimatedDuration": 7.0,
+      "defaultAssessment": "ASA III",
+      "coaCategories": ["General Anesthesia", "Abdominal"],
+      "commonTechniques": ["ETT", "Arterial Line", "Epidural"],
+      "anatomicalLocation": "Abdomen",
+      "jaffeReference": "Chapter 25: Abdominal Surgery",
+      "commonComplications": ["Blood Loss", "Fluid Shifts", "Hypothermia"],
+      "specificDetails": {
+        "positioning": "Supine",
+        "monitoring": ["Standard ASA", "Arterial Line", "CVP"],
+        "airwayManagement": "ETT",
+        "painManagement": ["Epidural", "Multimodal"],
+        "fluidManagement": "Goal-directed therapy",
+        "specialConsiderations": [
+          "Extended duration",
+          "Complex fluid management",
+          "Temperature control"
+        ]
+      }
+    },
+    {
+      "procedureName": "Complex Biliary Reconstruction",
+      "estimatedDuration": 5.0,
+      "defaultAssessment": "ASA III",
+      "coaCategories": ["General Anesthesia", "Abdominal"],
+      "commonTechniques": ["ETT", "Arterial Line"],
+      "anatomicalLocation": "Abdomen",
+      "jaffeReference": "Chapter 25: Abdominal Surgery",
+      "commonComplications": ["Bile Leak", "Bleeding", "Infection"],
+      "specificDetails": {
+        "positioning": "Supine",
+        "monitoring": ["Standard ASA", "Arterial Line"],
+        "airwayManagement": "ETT",
+        "painManagement": ["Epidural", "Multimodal"],
+        "fluidManagement": "Standard replacement",
+        "specialConsiderations": [
+          "Biliary drainage",
+          "Infection risk",
+          "Coagulation status"
+        ]
+      }
+    },
+    {
+      "procedureName": "Complex Hepatobiliary Resection",
+      "estimatedDuration": 8.0,
+      "defaultAssessment": "ASA III",
+      "coaCategories": ["General Anesthesia", "Abdominal"],
+      "commonTechniques": ["ETT", "Arterial Line", "CVP"],
+      "anatomicalLocation": "Abdomen",
+      "jaffeReference": "Chapter 25: Abdominal Surgery",
+      "commonComplications": ["Major Blood Loss", "Coagulopathy", "Air Embolism"],
+      "specificDetails": {
+        "positioning": "Modified supine",
+        "monitoring": ["Standard ASA", "Arterial Line", "CVP", "TEE optional"],
+        "airwayManagement": "ETT",
+        "painManagement": ["Epidural", "IV PCA"],
+        "fluidManagement": "Low CVP technique",
+        "specialConsiderations": [
+          "Liver dysfunction",
+          "Coagulation management",
+          "Air embolism precautions"
+        ]
+      }
+    },
+    {
+      "procedureName": "Complex Pancreatic Resection",
+      "estimatedDuration": 7.0,
+      "defaultAssessment": "ASA III",
+      "coaCategories": ["General Anesthesia", "Abdominal"],
+      "commonTechniques": ["ETT", "Arterial Line", "Epidural"],
+      "anatomicalLocation": "Abdomen",
+      "jaffeReference": "Chapter 25: Abdominal Surgery",
+      "commonComplications": ["Blood Loss", "Pancreatic Leak", "Fluid Shifts"],
+      "specificDetails": {
+        "positioning": "Supine",
+        "monitoring": ["Standard ASA", "Arterial Line", "CVP"],
+        "airwayManagement": "ETT",
+        "painManagement": ["Epidural", "Multimodal"],
+        "fluidManagement": "Goal-directed therapy",
+        "specialConsiderations": [
+          "Extended duration",
+          "Complex fluid management",
+          "Glucose control"
+        ]
+      }
+    },
+    {
+      "procedureName": "Complex Retroperitoneal Surgery",
+      "estimatedDuration": 6.0,
+      "defaultAssessment": "ASA III",
+      "coaCategories": ["General Anesthesia", "Abdominal"],
+      "commonTechniques": ["ETT", "Arterial Line"],
+      "anatomicalLocation": "Abdomen",
+      "jaffeReference": "Chapter 25: Abdominal Surgery",
+      "commonComplications": ["Bleeding", "Position Issues", "Organ Injury"],
+      "specificDetails": {
+        "positioning": "Lateral or modified supine",
+        "monitoring": ["Standard ASA", "Arterial Line"],
+        "airwayManagement": "ETT",
+        "painManagement": ["Epidural", "Multimodal"],
+        "fluidManagement": "Standard replacement",
+        "specialConsiderations": [
+          "Position-related issues",
+          "Deep location",
+          "Adjacent structures"
+        ]
+      }
+    }
+  ],
+  "orthopedic": [
+    {
+      "procedureName": "Total Knee Arthroplasty",
+      "estimatedDuration": 2.5,
+      "defaultAssessment": "ASA II",
+      "coaCategories": ["Regional Anesthesia", "Lower Extremity"],
+      "commonTechniques": ["Spinal", "Femoral Nerve Block"],
+      "anatomicalLocation": "Lower Extremity",
+      "jaffeReference": "Chapter 32: Anesthesia for Orthopedic Surgery",
+      "commonComplications": [
+        "Blood Loss",
+        "VTE Risk",
+        "Post-op Pain"
+      ],
+      "specificDetails": {
+        "positioning": "Supine",
+        "monitoring": ["Standard ASA", "Temperature", "Arterial Line (optional)"],
+        "airwayManagement": "Based on anesthetic choice",
+        "painManagement": ["Regional", "Multimodal"],
+        "fluidManagement": "Blood loss replacement + maintenance",
+        "specialConsiderations": [
+          "Tourniquet time",
+          "Cement implantation syndrome",
+          "DVT prophylaxis"
+        ]
+      }
+    },
+    {
+      "procedureName": "Total Hip Arthroplasty",
+      "estimatedDuration": 2.5,
+      "defaultAssessment": "ASA II",
+      "coaCategories": ["Regional Anesthesia", "Lower Extremity"],
+      "commonTechniques": ["Spinal", "Epidural"],
+      "anatomicalLocation": "Lower Extremity",
+      "jaffeReference": "Chapter 32: Anesthesia for Orthopedic Surgery",
+      "commonComplications": ["Blood loss", "VTE", "Hip dislocation"],
+      "specificDetails": {
+        "positioning": "Lateral",
+        "monitoring": ["Standard ASA", "Arterial Line (optional)"],
+        "airwayManagement": "Based on anesthetic choice",
+        "painManagement": ["Regional", "Multimodal"],
+        "fluidManagement": "Blood loss replacement",
+        "specialConsiderations": [
+          "Cement implantation",
+          "Positioning",
+          "DVT prophylaxis"
+        ]
+      }
+    },
+    {
+      "procedureName": "Arthroscopic ACL Reconstruction",
+      "estimatedDuration": 2.0,
+      "defaultAssessment": "ASA I",
+      "coaCategories": ["Regional Anesthesia", "Lower Extremity"],
+      "commonTechniques": ["Spinal", "Femoral Nerve Block"],
+      "anatomicalLocation": "Knee",
+      "jaffeReference": "Chapter 32: Anesthesia for Orthopedic Surgery",
+      "commonComplications": ["Tourniquet pain", "PONV", "Breakthrough pain"],
+      "specificDetails": {
+        "positioning": "Supine",
+        "monitoring": ["Standard ASA"],
+        "airwayManagement": "LMA or ETT",
+        "painManagement": ["Regional", "Multimodal"],
+        "fluidManagement": "Standard maintenance",
+        "specialConsiderations": [
+          "Tourniquet time",
+          "Regional block timing",
+          "Early mobilization"
+        ]
+      }
+    },
+    {
+      "procedureName": "Shoulder Arthroscopy",
+      "estimatedDuration": 1.5,
+      "defaultAssessment": "ASA II",
+      "coaCategories": ["Regional Anesthesia", "Upper Extremity"],
+      "commonTechniques": ["Interscalene Block", "Beach Chair"],
+      "anatomicalLocation": "Upper Extremity",
+      "jaffeReference": "Chapter 32: Anesthesia for Orthopedic Surgery",
+      "commonComplications": ["Hypotension", "Bradycardia", "Block failure"],
+      "specificDetails": {
+        "positioning": "Beach chair or lateral",
+        "monitoring": ["Standard ASA", "Cerebral Oximetry optional"],
+        "airwayManagement": "LMA or ETT",
+        "painManagement": ["Regional", "Multimodal"],
+        "fluidManagement": "Standard maintenance",
+        "specialConsiderations": [
+          "Beach chair positioning",
+          "Cerebral perfusion",
+          "Phrenic nerve paralysis"
+        ]
+      }
+    },
+    {
+      "procedureName": "Total Ankle Arthroplasty",
+      "estimatedDuration": 2.5,
+      "defaultAssessment": "ASA II",
+      "coaCategories": ["Regional Anesthesia", "Lower Extremity"],
+      "commonTechniques": ["Spinal", "Popliteal Block"],
+      "anatomicalLocation": "Lower Extremity",
+      "jaffeReference": "Chapter 32: Anesthesia for Orthopedic Surgery",
+      "commonComplications": ["Bleeding", "Nerve injury", "Infection"],
+      "specificDetails": {
+        "positioning": "Supine",
+        "monitoring": ["Standard ASA"],
+        "airwayManagement": "Based on anesthetic choice",
+        "painManagement": ["Regional", "Multimodal"],
+        "fluidManagement": "Standard replacement",
+        "specialConsiderations": [
+          "Tourniquet use",
+          "Positioning",
+          "Post-op pain management"
+        ]
+      }
+    },
+    {
+      "procedureName": "Spinal Fusion",
+      "estimatedDuration": 4.0,
+      "defaultAssessment": "ASA II",
+      "coaCategories": ["General Anesthesia", "Spine"],
+      "commonTechniques": ["ETT", "TIVA", "Neuromonitoring"],
+      "anatomicalLocation": "Spine",
+      "jaffeReference": "Chapter 32: Anesthesia for Orthopedic Surgery",
+      "commonComplications": ["Blood loss", "Position injury", "Visual loss"],
+      "specificDetails": {
+        "positioning": "Prone",
+        "monitoring": ["Standard ASA", "Arterial Line", "Neuromonitoring"],
+        "airwayManagement": "ETT secured for prone",
+        "painManagement": ["PCA", "Multimodal"],
+        "fluidManagement": "Blood loss replacement",
+        "specialConsiderations": [
+          "Prone positioning",
+          "PION risk",
+          "Neuromonitoring requirements"
+        ]
+      }
+    },
+    {
+      "procedureName": "Complex Revision Arthroplasty",
+      "estimatedDuration": 5.0,
+      "defaultAssessment": "ASA III",
+      "coaCategories": ["General Anesthesia", "Orthopedic"],
+      "commonTechniques": ["Spinal", "Epidural", "Arterial Line"],
+      "anatomicalLocation": "Lower Extremity",
+      "jaffeReference": "Chapter 32: Orthopedic Surgery",
+      "commonComplications": ["Major Blood Loss", "Cement Syndrome", "DVT"],
+      "specificDetails": {
+        "positioning": "Lateral or supine",
+        "monitoring": ["Standard ASA", "Arterial Line"],
+        "airwayManagement": "Based on anesthetic choice",
+        "painManagement": ["Regional", "Multimodal"],
+        "fluidManagement": "Blood loss management",
+        "specialConsiderations": [
+          "Cement considerations",
+          "Blood loss estimation",
+          "Extended duration"
+        ]
+      }
+    },
+    {
+      "procedureName": "Complex Spine Deformity",
+      "estimatedDuration": 8.0,
+      "defaultAssessment": "ASA III",
+      "coaCategories": ["General Anesthesia", "Orthopedic", "Spine"],
+      "commonTechniques": ["TIVA", "SSEP/MEP"],
+      "anatomicalLocation": "Spine",
+      "jaffeReference": "Chapter 32: Orthopedic Surgery",
+      "commonComplications": ["Major Blood Loss", "Cord Injury", "Visual Loss"],
+      "specificDetails": {
+        "positioning": "Prone",
+        "monitoring": ["Standard ASA", "Arterial Line", "SSEP/MEP"],
+        "airwayManagement": "ETT secured for prone",
+        "painManagement": ["Multimodal", "PCA"],
+        "fluidManagement": "Blood loss management",
+        "specialConsiderations": [
+          "PION risk",
+          "Neuromonitoring needs",
+          "Position-related issues"
+        ]
+      }
+    },
+    {
+      "procedureName": "Limb Salvage Surgery",
+      "estimatedDuration": 6.0,
+      "defaultAssessment": "ASA III",
+      "coaCategories": ["General Anesthesia", "Orthopedic", "Vascular"],
+      "commonTechniques": ["Regional", "Arterial Line"],
+      "anatomicalLocation": "Extremity",
+      "jaffeReference": "Chapter 32: Orthopedic Surgery",
+      "commonComplications": ["Ischemia", "Compartment Syndrome", "Blood Loss"],
+      "specificDetails": {
+        "positioning": "Based on approach",
+        "monitoring": ["Standard ASA", "Arterial Line"],
+        "airwayManagement": "ETT",
+        "painManagement": ["Regional", "Multimodal"],
+        "fluidManagement": "Goal-directed therapy",
+        "specialConsiderations": [
+          "Tourniquet time",
+          "Reperfusion issues",
+          "Vascular monitoring"
+        ]
+      }
+    },
+    {
+      "procedureName": "Complex Scoliosis Surgery",
+      "estimatedDuration": 8.0,
+      "defaultAssessment": "ASA III",
+      "coaCategories": ["General Anesthesia", "Orthopedic", "Spine"],
+      "commonTechniques": ["TIVA", "SSEP/MEP"],
+      "anatomicalLocation": "Spine",
+      "jaffeReference": "Chapter 32: Orthopedic Surgery",
+      "commonComplications": ["Major Blood Loss", "Cord Injury", "Visual Loss"],
+      "specificDetails": {
+        "positioning": "Prone",
+        "monitoring": ["Standard ASA", "Arterial Line", "SSEP/MEP"],
+        "airwayManagement": "ETT secured for prone",
+        "painManagement": ["Multimodal", "PCA"],
+        "fluidManagement": "Blood loss management",
+        "specialConsiderations": [
+          "PION risk",
+          "Neuromonitoring needs",
+          "Temperature control"
+        ]
+      }
+    },
+    {
+      "procedureName": "Complex Joint Revision",
+      "estimatedDuration": 5.0,
+      "defaultAssessment": "ASA III",
+      "coaCategories": ["General Anesthesia", "Orthopedic"],
+      "commonTechniques": ["Regional", "Arterial Line"],
+      "anatomicalLocation": "Extremities",
+      "jaffeReference": "Chapter 32: Orthopedic Surgery",
+      "commonComplications": ["Major Blood Loss", "Cement Issues", "Fracture"],
+      "specificDetails": {
+        "positioning": "Based on joint",
+        "monitoring": ["Standard ASA", "Arterial Line"],
+        "airwayManagement": "ETT",
+        "painManagement": ["Regional", "Multimodal"],
+        "fluidManagement": "Blood loss management",
+        "specialConsiderations": [
+          "Cement precautions",
+          "Hardware removal",
+          "Bone grafting"
+        ]
+      }
+    },
+    {
+      "procedureName": "Pelvic Reconstruction",
+      "estimatedDuration": 6.0,
+      "defaultAssessment": "ASA III",
+      "coaCategories": ["General Anesthesia", "Orthopedic"],
+      "commonTechniques": ["ETT", "Arterial Line"],
+      "anatomicalLocation": "Pelvis",
+      "jaffeReference": "Chapter 32: Orthopedic Surgery",
+      "commonComplications": ["Major Blood Loss", "Nerve Injury", "DVT"],
+      "specificDetails": {
+        "positioning": "Supine or lateral",
+        "monitoring": ["Standard ASA", "Arterial Line"],
+        "airwayManagement": "ETT",
+        "painManagement": ["Epidural", "Multimodal"],
+        "fluidManagement": "Blood loss management",
+        "specialConsiderations": [
+          "Position-related issues",
+          "Nerve monitoring",
+          "DVT prophylaxis"
+        ]
+      }
+    },
+    {
+      "procedureName": "Complex Pelvic Reconstruction",
+      "estimatedDuration": 6.0,
+      "defaultAssessment": "ASA III",
+      "coaCategories": ["General Anesthesia", "Orthopedic"],
+      "commonTechniques": ["ETT", "Arterial Line"],
+      "anatomicalLocation": "Pelvis",
+      "jaffeReference": "Chapter 32: Orthopedic Surgery",
+      "commonComplications": ["Major Blood Loss", "Nerve Injury", "DVT"],
+      "specificDetails": {
+        "positioning": "Supine or lateral",
+        "monitoring": ["Standard ASA", "Arterial Line"],
+        "airwayManagement": "ETT",
+        "painManagement": ["Epidural", "Multimodal"],
+        "fluidManagement": "Blood loss management",
+        "specialConsiderations": [
+          "Position-related issues",
+          "Nerve monitoring",
+          "DVT prophylaxis"
+        ]
+      }
+    },
+    {
+      "procedureName": "Complex Limb Salvage",
+      "estimatedDuration": 6.0,
+      "defaultAssessment": "ASA III",
+      "coaCategories": ["General Anesthesia", "Orthopedic", "Vascular"],
+      "commonTechniques": ["Regional", "Arterial Line"],
+      "anatomicalLocation": "Extremity",
+      "jaffeReference": "Chapter 32: Orthopedic Surgery",
+      "commonComplications": ["Ischemia", "Compartment Syndrome", "Blood Loss"],
+      "specificDetails": {
+        "positioning": "Based on approach",
+        "monitoring": ["Standard ASA", "Arterial Line"],
+        "airwayManagement": "ETT",
+        "painManagement": ["Regional", "Multimodal"],
+        "fluidManagement": "Goal-directed therapy",
+        "specialConsiderations": [
+          "Tourniquet time",
+          "Reperfusion issues",
+          "Vascular monitoring"
+        ]
+      }
+    }
+  ],
+  "thoracic": [
+    {
+      "procedureName": "VATS Lobectomy",
+      "estimatedDuration": 3.0,
+      "defaultAssessment": "ASA III",
+      "coaCategories": ["General Anesthesia", "Intrathoracic"],
+      "commonTechniques": ["Double Lumen ETT", "Bronchial Blocker"],
+      "anatomicalLocation": "Thorax",
+      "jaffeReference": "Chapter 24: Anesthesia for Thoracic Surgery",
+      "commonComplications": [
+        "Hypoxemia",
+        "Bronchospasm",
+        "Post-op Respiratory Depression"
+      ],
+      "specificDetails": {
+        "positioning": "Lateral decubitus",
+        "monitoring": ["Standard ASA", "Arterial Line", "CVP optional"],
+        "airwayManagement": "Lung isolation required",
+        "painManagement": ["Thoracic epidural", "Paravertebral", "Multimodal"],
+        "fluidManagement": "Conservative strategy",
+        "specialConsiderations": [
+          "OLV physiology",
+          "Hypoxic pulmonary vasoconstriction",
+          "Post-op pain management"
+        ]
+      }
+    },
+    {
+      "procedureName": "Open Thoracotomy",
+      "estimatedDuration": 4.0,
+      "defaultAssessment": "ASA III",
+      "coaCategories": ["General Anesthesia", "Intrathoracic"],
+      "commonTechniques": ["Double Lumen ETT", "Arterial Line", "Thoracic Epidural"],
+      "anatomicalLocation": "Chest",
+      "jaffeReference": "Chapter 24: Anesthesia for Thoracic Surgery",
+      "commonComplications": ["Hypoxemia", "Arrhythmias", "Post-thoracotomy pain"],
+      "specificDetails": {
+        "positioning": "Lateral decubitus",
+        "monitoring": ["Standard ASA", "Arterial Line", "CVP", "Temperature"],
+        "airwayManagement": "Lung isolation required",
+        "painManagement": ["Thoracic epidural", "Multimodal", "Intercostal blocks"],
+        "fluidManagement": "Goal-directed therapy",
+        "specialConsiderations": [
+          "OLV management",
+          "Bronchial blocker placement",
+          "Post-op pain control"
+        ]
+      }
+    },
+    {
+      "procedureName": "Mediastinoscopy",
+      "estimatedDuration": 1.5,
+      "defaultAssessment": "ASA III",
+      "coaCategories": ["General Anesthesia", "Intrathoracic"],
+      "commonTechniques": ["ETT", "Cross-table ventilation"],
+      "anatomicalLocation": "Chest",
+      "jaffeReference": "Chapter 24: Anesthesia for Thoracic Surgery",
+      "commonComplications": ["Great vessel injury", "Arrhythmias", "Airway compression"],
+      "specificDetails": {
+        "positioning": "Supine with neck extension",
+        "monitoring": ["Standard ASA", "Arterial Line optional"],
+        "airwayManagement": "Reinforced ETT",
+        "painManagement": ["Short-acting opioids", "Local infiltration"],
+        "fluidManagement": "Standard maintenance",
+        "specialConsiderations": [
+          "Shared airway",
+          "Superior vena cava compression",
+          "Vagal stimulation"
+        ]
+      }
+    },
+    {
+      "procedureName": "Tracheal Resection",
+      "estimatedDuration": 4.0,
+      "defaultAssessment": "ASA III",
+      "coaCategories": ["General Anesthesia", "Thoracic"],
+      "commonTechniques": ["Cross-field ventilation", "ECMO standby"],
+      "anatomicalLocation": "Neck/Chest",
+      "jaffeReference": "Chapter 24: Thoracic Surgery",
+      "commonComplications": ["Airway Loss", "Bleeding", "Laryngeal Nerve Injury"],
+      "specificDetails": {
+        "positioning": "Supine with neck extension",
+        "monitoring": ["Standard ASA", "Arterial Line"],
+        "airwayManagement": "Specialized airway plan",
+        "painManagement": ["Regional", "IV opioids"],
+        "fluidManagement": "Standard replacement",
+        "specialConsiderations": [
+          "Airway management plan",
+          "Jet ventilation option",
+          "ECMO backup"
+        ]
+      }
+    },
+    {
+      "procedureName": "Bronchial Sleeve Resection",
+      "estimatedDuration": 5.0,
+      "defaultAssessment": "ASA III",
+      "coaCategories": ["General Anesthesia", "Thoracic"],
+      "commonTechniques": ["DLT", "Bronchial Blocker"],
+      "anatomicalLocation": "Chest",
+      "jaffeReference": "Chapter 24: Thoracic Surgery",
+      "commonComplications": ["Anastomotic Leak", "Pneumonia", "Atelectasis"],
+      "specificDetails": {
+        "positioning": "Lateral decubitus",
+        "monitoring": ["Standard ASA", "Arterial Line"],
+        "airwayManagement": "Lung isolation required",
+        "painManagement": ["Thoracic epidural", "Multimodal"],
+        "fluidManagement": "Restrictive strategy",
+        "specialConsiderations": [
+          "Airway assessment",
+          "Bronchoscopy",
+          "Anastomosis protection"
+        ]
+      }
+    },
+    {
+      "procedureName": "Complex Airway Surgery",
+      "estimatedDuration": 3.0,
+      "defaultAssessment": "ASA III",
+      "coaCategories": ["General Anesthesia", "Thoracic"],
+      "commonTechniques": ["Specialized Airway", "ECMO consideration"],
+      "anatomicalLocation": "Airway",
+      "jaffeReference": "Chapter 24: Thoracic Surgery",
+      "commonComplications": ["Airway Loss", "Hypoxemia", "Bleeding"],
+      "specificDetails": {
+        "positioning": "Based on approach",
+        "monitoring": ["Standard ASA", "Arterial Line"],
+        "airwayManagement": "Individualized plan",
+        "painManagement": ["Total IV Anesthesia"],
+        "fluidManagement": "Standard maintenance",
+        "specialConsiderations": [
+          "Shared airway",
+          "Rescue strategies",
+          "Team communication"
+        ]
+      }
+    },
+    {
+      "procedureName": "Esophagectomy",
+      "estimatedDuration": 6.0,
+      "defaultAssessment": "ASA III",
+      "coaCategories": ["General Anesthesia", "Thoracic"],
+      "commonTechniques": ["DLT", "Arterial Line", "Epidural"],
+      "anatomicalLocation": "Chest/Abdomen",
+      "jaffeReference": "Chapter 24: Thoracic Surgery",
+      "commonComplications": ["Respiratory Failure", "Anastomotic Leak", "ARDS"],
+      "specificDetails": {
+        "positioning": "Multiple positions",
+        "monitoring": ["Standard ASA", "Arterial Line", "CVP"],
+        "airwayManagement": "Lung isolation required",
+        "painManagement": ["Thoracic epidural", "Multimodal"],
+        "fluidManagement": "Restrictive strategy",
+        "specialConsiderations": [
+          "Position changes",
+          "OLV management",
+          "Fluid restriction"
+        ]
+      }
+    },
+    {
+      "procedureName": "Chest Wall Resection",
+      "estimatedDuration": 5.0,
+      "defaultAssessment": "ASA III",
+      "coaCategories": ["General Anesthesia", "Thoracic"],
+      "commonTechniques": ["DLT", "Arterial Line"],
+      "anatomicalLocation": "Chest Wall",
+      "jaffeReference": "Chapter 24: Thoracic Surgery",
+      "commonComplications": ["Respiratory Compromise", "Pain", "Bleeding"],
+      "specificDetails": {
+        "positioning": "Based on location",
+        "monitoring": ["Standard ASA", "Arterial Line"],
+        "airwayManagement": "Lung isolation",
+        "painManagement": ["Regional", "Multimodal"],
+        "fluidManagement": "Standard replacement",
+        "specialConsiderations": [
+          "Ventilation strategy",
+          "Chest wall stability",
+          "Pain management"
+        ]
+      }
+    },
+    {
+      "procedureName": "Minimally Invasive Esophageal Surgery",
+      "estimatedDuration": 5.0,
+      "defaultAssessment": "ASA III",
+      "coaCategories": ["General Anesthesia", "Thoracic", "Minimally Invasive"],
+      "commonTechniques": ["DLT", "Arterial Line"],
+      "anatomicalLocation": "Chest",
+      "jaffeReference": "Chapter 24: Thoracic Surgery",
+      "commonComplications": ["Position Issues", "OLV Problems", "Gas Embolism"],
+      "specificDetails": {
+        "positioning": "Left lateral",
+        "monitoring": ["Standard ASA", "Arterial Line"],
+        "airwayManagement": "Lung isolation required",
+        "painManagement": ["Regional", "Multimodal"],
+        "fluidManagement": "Restrictive strategy",
+        "specialConsiderations": [
+          "CO2 insufflation",
+          "OLV management",
+          "Position-related issues"
+        ]
+      }
+    },
+    {
+      "procedureName": "Complex Spine Surgery",
+      "estimatedDuration": 8.0,
+      "defaultAssessment": "ASA III",
+      "coaCategories": ["General Anesthesia", "Spine"],
+      "commonTechniques": ["TIVA", "Neuromonitoring"],
+      "anatomicalLocation": "Spine",
+      "jaffeReference": "Chapter 30: Neuroanesthesia",
+      "commonComplications": ["Position Injury", "Visual Loss", "Spinal Cord Injury"],
+      "specificDetails": {
+        "positioning": "Prone",
+        "monitoring": ["Standard ASA", "Arterial Line", "SSEP/MEP"],
+        "airwayManagement": "ETT secured for prone",
+        "painManagement": ["Multimodal", "PCA"],
+        "fluidManagement": "Blood loss management",
+        "specialConsiderations": [
+          "PION risk",
+          "Positioning injuries",
+          "Neuromonitoring requirements"
+        ]
+      }
+    },
+    {
+      "procedureName": "Skull Base Surgery",
+      "estimatedDuration": 8.0,
+      "defaultAssessment": "ASA III",
+      "coaCategories": ["General Anesthesia", "Neurologic"],
+      "commonTechniques": ["TIVA", "Cranial Nerve Monitoring"],
+      "anatomicalLocation": "Head",
+      "jaffeReference": "Chapter 30: Neuroanesthesia",
+      "commonComplications": ["CSF Leak", "Cranial Nerve Injury", "Air Embolism"],
+      "specificDetails": {
+        "positioning": "Variable",
+        "monitoring": ["Standard ASA", "Arterial Line", "Nerve Monitoring"],
+        "airwayManagement": "ETT with special securing",
+        "painManagement": ["Remifentanil-based"],
+        "fluidManagement": "Normal to slightly dry",
+        "specialConsiderations": [
+          "Air embolism precautions",
+          "Cranial nerve protection",
+          "Brain relaxation"
+        ]
+      }
+    },
+    {
+      "procedureName": "Intracranial Vascular Surgery",
+      "estimatedDuration": 6.0,
+      "defaultAssessment": "ASA III",
+      "coaCategories": ["General Anesthesia", "Neurologic", "Vascular"],
+      "commonTechniques": ["TIVA", "Burst Suppression"],
+      "anatomicalLocation": "Head",
+      "jaffeReference": "Chapter 30: Neuroanesthesia",
+      "commonComplications": ["Stroke", "Vasospasm", "Brain Swelling"],
+      "specificDetails": {
+        "positioning": "Head fixation",
+        "monitoring": ["Standard ASA", "Arterial Line", "EEG"],
+        "airwayManagement": "ETT",
+        "painManagement": ["Remifentanil-based"],
+        "fluidManagement": "Euvolemia",
+        "specialConsiderations": [
+          "Temporary clip time",
+          "Brain protection",
+          "Burst suppression timing"
+        ]
+      }
+    },
+    {
+      "procedureName": "Complex Mediastinal Mass",
+      "estimatedDuration": 5.0,
+      "defaultAssessment": "ASA III",
+      "coaCategories": ["General Anesthesia", "Thoracic"],
+      "commonTechniques": ["DLT", "ECMO Standby"],
+      "anatomicalLocation": "Chest",
+      "jaffeReference": "Chapter 24: Thoracic Surgery",
+      "commonComplications": ["Airway Compression", "SVC Syndrome", "Hemodynamic Collapse"],
+      "specificDetails": {
+        "positioning": "Semi-upright",
+        "monitoring": ["Standard ASA", "Arterial Line", "TEE"],
+        "airwayManagement": "Specialized approach",
+        "painManagement": ["Regional", "IV opioids"],
+        "fluidManagement": "Careful volume status",
+        "specialConsiderations": [
+          "Mass effects",
+          "ECMO backup",
+          "Position-related issues"
+        ]
+      }
+    },
+    {
+      "procedureName": "Thoracic Outlet Surgery",
+      "estimatedDuration": 4.0,
+      "defaultAssessment": "ASA III",
+      "coaCategories": ["General Anesthesia", "Thoracic", "Vascular"],
+      "commonTechniques": ["DLT", "Nerve Monitoring"],
+      "anatomicalLocation": "Chest/Neck",
+      "jaffeReference": "Chapter 24: Thoracic Surgery",
+      "commonComplications": ["Nerve Injury", "Vascular Injury", "Pneumothorax"],
+      "specificDetails": {
+        "positioning": "Modified supine",
+        "monitoring": ["Standard ASA", "Arterial Line", "Nerve Monitoring"],
+        "airwayManagement": "Lung isolation",
+        "painManagement": ["Regional", "Multimodal"],
+        "fluidManagement": "Standard replacement",
+        "specialConsiderations": [
+          "Nerve monitoring",
+          "Position-related issues",
+          "Post-op pain control"
+        ]
+      }
+    },
+    {
+      "procedureName": "Minimally Invasive Chest Wall",
+      "estimatedDuration": 3.0,
+      "defaultAssessment": "ASA II",
+      "coaCategories": ["General Anesthesia", "Thoracic"],
+      "commonTechniques": ["DLT", "Regional"],
+      "anatomicalLocation": "Chest Wall",
+      "jaffeReference": "Chapter 24: Thoracic Surgery",
+      "commonComplications": ["Pneumothorax", "Pain", "Bleeding"],
+      "defaultAssessment": "ASA III",
+      "coaCategories": ["General Anesthesia", "Trauma", "Burns"],
+    },
+    {
+      "procedureName": "Complex Lung Resection",
+      "estimatedDuration": 5.0,
+      "defaultAssessment": "ASA III",
+      "coaCategories": ["General Anesthesia", "Thoracic"],
+      "commonTechniques": ["DLT", "Arterial Line"],
+      "anatomicalLocation": "Chest",
+      "jaffeReference": "Chapter 24: Thoracic Surgery",
+      "commonComplications": ["Air Leak", "Bleeding", "Respiratory Failure"],
+      "specificDetails": {
+        "positioning": "Lateral decubitus",
+        "monitoring": ["Standard ASA", "Arterial Line"],
+        "airwayManagement": "Lung isolation required",
+        "painManagement": ["Thoracic epidural", "Multimodal"],
+        "fluidManagement": "Restrictive strategy",
+        "specialConsiderations": [
+          "OLV management",
+          "Air leak assessment",
+          "Post-op pain control"
+        ]
+      }
+    },
+    {
+      "procedureName": "Complex Mediastinal Surgery",
+      "estimatedDuration": 4.0,
+      "defaultAssessment": "ASA III",
+      "coaCategories": ["General Anesthesia", "Thoracic"],
+      "commonTechniques": ["DLT", "ECMO Standby"],
+      "anatomicalLocation": "Chest",
+      "jaffeReference": "Chapter 24: Thoracic Surgery",
+      "commonComplications": ["Mass Effects", "SVC Syndrome", "Airway Compression"],
+      "specificDetails": {
+        "positioning": "Supine or lateral",
+        "monitoring": ["Standard ASA", "Arterial Line"],
+        "airwayManagement": "Specialized approach",
+        "painManagement": ["Regional", "IV opioids"],
+        "fluidManagement": "Careful volume status",
+        "specialConsiderations": [
+          "Mass effects",
+          "ECMO backup",
+          "Airway management"
+        ]
+      }
+    },
+    {
+      "procedureName": "Robotic Thoracic Surgery",
+      "estimatedDuration": 4.0,
+      "defaultAssessment": "ASA III",
+      "coaCategories": ["General Anesthesia", "Thoracic", "Robotic"],
+      "commonTechniques": ["DLT", "Arterial Line"],
+      "anatomicalLocation": "Chest",
+      "jaffeReference": "Chapter 24: Thoracic Surgery",
+      "commonComplications": ["OLV Issues", "Position Effects", "Port Site Pain"],
+      "specificDetails": {
+        "positioning": "Lateral decubitus",
+        "monitoring": ["Standard ASA", "Arterial Line"],
+        "airwayManagement": "Lung isolation required",
+        "painManagement": ["Regional", "Multimodal"],
+        "fluidManagement": "Restrictive strategy",
+        "specialConsiderations": [
+          "Robot docking",
+          "OLV management",
+          "Emergency undocking"
+        ]
+      }
+    },
+    {
+      "procedureName": "Complex Tracheal Surgery",
+      "estimatedDuration": 5.0,
+      "defaultAssessment": "ASA III",
+      "coaCategories": ["General Anesthesia", "Thoracic", "Airway"],
+      "commonTechniques": ["Specialized Airway", "Cross-field Ventilation"],
+      "anatomicalLocation": "Airway",
+      "jaffeReference": "Chapter 24: Thoracic Surgery",
+      "commonComplications": ["Airway Loss", "Bleeding", "Anastomotic Issues"],
+      "specificDetails": {
+        "positioning": "Supine with neck extension",
+        "monitoring": ["Standard ASA", "Arterial Line"],
+        "airwayManagement": "Specialized approach",
+        "painManagement": ["Regional", "IV opioids"],
+        "fluidManagement": "Standard replacement",
+        "specialConsiderations": [
+          "Airway management plan",
+          "Jet ventilation backup",
+          "Post-op monitoring"
+        ]
+      }
+    },
+    {
+      "procedureName": "Complex Chest Wall Resection",
+      "estimatedDuration": 4.0,
+      "defaultAssessment": "ASA III",
+      "coaCategories": ["General Anesthesia", "Thoracic"],
+      "commonTechniques": ["DLT", "Regional"],
+      "anatomicalLocation": "Chest Wall",
+      "jaffeReference": "Chapter 24: Thoracic Surgery",
+      "commonComplications": ["Respiratory Compromise", "Pain", "Bleeding"],
+      "specificDetails": {
+        "positioning": "Based on location",
+        "monitoring": ["Standard ASA", "Arterial Line"],
+        "airwayManagement": "Lung isolation",
+        "painManagement": ["Regional", "Multimodal"],
+        "fluidManagement": "Standard replacement",
+        "specialConsiderations": [
+          "Chest wall stability",
+          "Pain management",
+          "Respiratory function"
+        ]
+      }
+    },
+    {
+      "procedureName": "Complex Esophageal Surgery",
+      "estimatedDuration": 6.0,
+      "defaultAssessment": "ASA III",
+      "coaCategories": ["General Anesthesia", "Thoracic"],
+      "commonTechniques": ["DLT", "Arterial Line"],
+      "anatomicalLocation": "Chest/Abdomen",
+      "jaffeReference": "Chapter 24: Thoracic Surgery",
+      "commonComplications": ["Respiratory Failure", "Anastomotic Leak", "ARDS"],
+      "specificDetails": {
+        "positioning": "Multiple positions",
+        "monitoring": ["Standard ASA", "Arterial Line", "CVP"],
+        "airwayManagement": "Lung isolation required",
+        "painManagement": ["Thoracic epidural", "Multimodal"],
+        "fluidManagement": "Restrictive strategy",
+        "specialConsiderations": [
+          "Position changes",
+          "OLV management",
+          "Fluid restriction"
+        ]
+      }
+    },
+    {
+      "procedureName": "Complex Lung Transplant",
+      "estimatedDuration": 8.0,
+      "defaultAssessment": "ASA IV",
+      "coaCategories": ["General Anesthesia", "Thoracic", "Transplant"],
+      "commonTechniques": ["DLT", "ECMO", "PA Catheter"],
+      "anatomicalLocation": "Chest",
+      "jaffeReference": "Chapter 24: Thoracic Surgery",
+      "commonComplications": ["Primary Graft Dysfunction", "Bleeding", "Right Heart Failure"],
+      "specificDetails": {
+        "positioning": "Lateral for single, supine for bilateral",
+        "monitoring": ["Standard ASA", "Arterial Line", "PA Catheter", "TEE"],
+        "airwayManagement": "DLT to SLT conversion",
+        "painManagement": ["High-dose opioids", "Epidural"],
+        "fluidManagement": "Restrictive strategy",
+        "specialConsiderations": [
+          "ECMO management",
+          "Ventilation strategies",
+          "Reperfusion injury"
+        ]
+      }
+    },
+    {
+      "procedureName": "Complex Mediastinal Mass",
+      "estimatedDuration": 5.0,
+      "defaultAssessment": "ASA III",
+      "coaCategories": ["General Anesthesia", "Thoracic"],
+      "commonTechniques": ["DLT", "ECMO Standby"],
+      "anatomicalLocation": "Chest",
+      "jaffeReference": "Chapter 24: Thoracic Surgery",
+      "commonComplications": ["Airway Compression", "SVC Syndrome", "Hemodynamic Collapse"],
+      "specificDetails": {
+        "positioning": "Semi-upright",
+        "monitoring": ["Standard ASA", "Arterial Line", "TEE"],
+        "airwayManagement": "Specialized approach",
+        "painManagement": ["Regional", "IV opioids"],
+        "fluidManagement": "Careful volume status",
+        "specialConsiderations": [
+          "Mass effects",
+          "ECMO backup",
+          "Position-related issues"
+        ]
+      }
+    },
+    {
+      "procedureName": "Complex Airway Surgery",
+      "estimatedDuration": 4.0,
+      "defaultAssessment": "ASA III",
+      "coaCategories": ["General Anesthesia", "Thoracic", "Airway"],
+      "commonTechniques": ["Specialized Airway", "ECMO Standby"],
+      "anatomicalLocation": "Airway",
+      "jaffeReference": "Chapter 24: Thoracic Surgery",
+      "commonComplications": ["Airway Loss", "Bleeding", "Post-op Stridor"],
+      "specificDetails": {
+        "positioning": "Based on approach",
+        "monitoring": ["Standard ASA", "Arterial Line"],
+        "airwayManagement": "Individualized plan",
+        "painManagement": ["TIVA"],
+        "fluidManagement": "Standard maintenance",
+        "specialConsiderations": [
+          "Airway management plan",
+          "ECMO backup",
+          "Post-op monitoring"
+        ]
+      }
+    },
+    {
+      "procedureName": "Advanced Paravertebral Block Series",
+      "estimatedDuration": 1.5,
+      "defaultAssessment": "ASA II",
+      "coaCategories": ["Regional", "Pain Management"],
+      "commonTechniques": ["Ultrasound", "Nerve Stimulation"],
+      "anatomicalLocation": "Thoracic",
+      "jaffeReference": "Chapter 20: Regional Anesthesia",
+      "commonComplications": ["Pneumothorax", "Vascular Puncture", "Failed Block"],
+      "specificDetails": {
+        "positioning": "Sitting/Lateral",
+        "monitoring": ["Standard ASA"],
+        "airwayManagement": "None required",
+        "painManagement": ["Local Anesthetic"],
+        "fluidManagement": "Standard maintenance",
+        "specialConsiderations": [
+          "Multiple level injection",
+          "Bilateral consideration",
+          "Anatomical variations"
+        ]
+      }
+    },
+    {
+      "procedureName": "Complex Peripheral Nerve Catheter",
+      "estimatedDuration": 1.0,
+      "defaultAssessment": "ASA II",
+      "coaCategories": ["Regional", "Pain Management"],
+      "commonTechniques": ["Ultrasound", "Catheter Threading"],
+      "anatomicalLocation": "Extremities",
+      "jaffeReference": "Chapter 20: Regional Anesthesia",
+      "commonComplications": ["Catheter Migration", "Infection", "Neural Injury"],
+      "specificDetails": {
+        "positioning": "Based on target",
+        "monitoring": ["Standard ASA"],
+        "airwayManagement": "None required",
+        "painManagement": ["Local Anesthetic"],
+        "fluidManagement": "Minimal",
+        "specialConsiderations": [
+          "Catheter tunneling",
+          "Securing technique",
+          "Patient education"
+        ]
+      }
+    },
+    {
+      "procedureName": "Ultrasound-Guided TAP Series",
+      "estimatedDuration": 1.0,
+      "defaultAssessment": "ASA II",
+      "coaCategories": ["Regional", "Pain Management"],
+      "commonTechniques": ["Ultrasound", "Bilateral Injection"],
+      "anatomicalLocation": "Abdomen",
+      "jaffeReference": "Chapter 20: Regional Anesthesia",
+      "commonComplications": ["Incomplete Block", "Peritoneal Puncture", "Local Toxicity"],
+      "specificDetails": {
+        "positioning": "Supine",
+        "monitoring": ["Standard ASA"],
+        "airwayManagement": "None required",
+        "painManagement": ["Local Anesthetic"],
+        "fluidManagement": "Minimal",
+        "specialConsiderations": [
+          "Bilateral dosing",
+          "Compartment spread",
+          "Timing with surgery"
+        ]
+      }
+    },
+    {
+      "procedureName": "Robotic-Assisted Anesthesia",
+      "estimatedDuration": 4.0,
+      "defaultAssessment": "ASA III",
+      "coaCategories": ["General Anesthesia", "Minimally Invasive"],
+      "commonTechniques": ["Steep Positioning", "Long-Duration Management"],
+      "anatomicalLocation": "Various",
+      "jaffeReference": "Chapter 31: Robotic Surgery",
+      "commonComplications": ["Position Injury", "Pneumoperitoneum Issues", "Access Complications"],
+      "specificDetails": {
+        "positioning": "Steep Trendelenburg",
+        "monitoring": ["Standard ASA", "Advanced Hemodynamic"],
+        "airwayManagement": "Secured ETT",
+        "painManagement": ["Multimodal approach"],
+        "fluidManagement": "Goal-directed",
+        "specialConsiderations": [
+          "Position-related changes",
+          "Limited access",
+          "Extended duration"
+        ]
+      }
+    },
+    {
+      "procedureName": "Advanced ERAS Protocol",
+      "estimatedDuration": 3.0,
+      "defaultAssessment": "ASA II",
+      "coaCategories": ["General Anesthesia", "Regional"],
+      "commonTechniques": ["Multimodal Analgesia", "Goal-Directed Fluid"],
+      "anatomicalLocation": "Various",
+      "jaffeReference": "Chapter 15: Enhanced Recovery",
+      "commonComplications": ["PONV", "Pain Control", "Fluid Balance"],
+      "specificDetails": {
+        "positioning": "Procedure specific",
+        "monitoring": ["Standard ASA", "Depth of Anesthesia"],
+        "airwayManagement": "Procedure appropriate",
+        "painManagement": ["Multimodal", "Regional"],
+        "fluidManagement": "Zero-balance approach",
+        "specialConsiderations": [
+          "Protocol adherence",
+          "Early mobilization",
+          "Opioid sparing"
+        ]
+      }
+    },
+    {
+      "procedureName": "Minimally Invasive Cardiac Procedure",
+      "estimatedDuration": 4.0,
+      "defaultAssessment": "ASA IV",
+      "coaCategories": ["Cardiac", "Minimally Invasive"],
+      "commonTechniques": ["TEE", "One-Lung Ventilation"],
+      "anatomicalLocation": "Chest",
+      "jaffeReference": "Chapter 25: Cardiac Surgery",
+      "commonComplications": ["Conversion to Open", "Bleeding", "Arrhythmias"],
+      "specificDetails": {
+        "positioning": "Procedure specific",
+        "monitoring": ["Standard ASA", "Invasive Monitoring", "TEE"],
+        "airwayManagement": "DLT/Bronchial Blocker",
+        "painManagement": ["Regional", "Multimodal"],
+        "fluidManagement": "Goal-directed",
+        "specialConsiderations": [
+          "Rapid conversion plan",
+          "One-lung ventilation",
+          "Anticoagulation"
+        ]
+      }
+    },
+    {
+      "procedureName": "Hybrid Endovascular Procedure",
+      "estimatedDuration": 6.0,
+      "defaultAssessment": "ASA IV",
+      "coaCategories": ["Vascular", "General Anesthesia"],
+      "commonTechniques": ["Heparin Management", "Rapid Conversion"],
+      "anatomicalLocation": "Various",
+      "jaffeReference": "Chapter 26: Vascular Surgery",
+      "commonComplications": ["Bleeding", "Thrombosis", "Contrast Reaction"],
+      "specificDetails": {
+        "positioning": "Hybrid suite setup",
+        "monitoring": ["Standard ASA", "Invasive Monitoring"],
+        "airwayManagement": "Secured airway",
+        "painManagement": ["Balanced technique"],
+        "fluidManagement": "Careful volume status",
+        "specialConsiderations": [
+          "Radiation safety",
+          "Contrast management",
+          "Quick conversion"
+        ]
+      }
+    },
+    {
+      "procedureName": "Combined Cardiac-Thoracic Approach",
+      "estimatedDuration": 7.0,
+      "defaultAssessment": "ASA IV",
+      "coaCategories": ["Cardiac", "Thoracic"],
+      "commonTechniques": ["OLV", "CPB Standby"],
+      "anatomicalLocation": "Chest",
+      "jaffeReference": "Chapter 25: Cardiac Surgery",
+      "commonComplications": ["Hemodynamic Instability", "Respiratory Failure", "Bleeding"],
+      "specificDetails": {
+        "positioning": "Supine with access",
+        "monitoring": ["Standard ASA", "PA Catheter", "TEE"],
+        "airwayManagement": "DLT/Bronchial Blocker",
+        "painManagement": ["Multimodal", "Regional"],
+        "fluidManagement": "Goal-directed",
+        "specialConsiderations": [
+          "Sequence planning",
+          "Team coordination",
+          "Complex monitoring"
+        ]
+      }
+    },
+    {
+      "procedureName": "Hybrid Neurovascular Intervention",
+      "estimatedDuration": 5.0,
+      "defaultAssessment": "ASA III",
+      "coaCategories": ["Neurologic", "Vascular"],
+      "commonTechniques": ["Neuromonitoring", "Induced Hypertension"],
+      "anatomicalLocation": "Head",
+      "jaffeReference": "Chapter 27: Neuroanesthesia",
+      "commonComplications": ["Stroke", "Hemorrhage", "Contrast Issues"],
+      "specificDetails": {
+        "positioning": "Hybrid suite setup",
+        "monitoring": ["Standard ASA", "Neuromonitoring"],
+        "airwayManagement": "Secured airway",
+        "painManagement": ["TIVA preferred"],
+        "fluidManagement": "Euvolemia",
+        "specialConsiderations": [
+          "Imaging requirements",
+          "Heparin management",
+          "Wake-up testing"
+        ]
+      }
+    }
+  ],
+  "ent": [
+    {
+      "procedureName": "Complex Skull Base Tumor",
+      "estimatedDuration": 8.0,
+      "defaultAssessment": "ASA III",
+      "coaCategories": ["General Anesthesia", "Head and Neck", "Neurologic"],
+      "commonTechniques": ["ETT", "Nerve Monitoring"],
+      "anatomicalLocation": "Head",
+      "jaffeReference": "Chapter 28: ENT Surgery",
+      "commonComplications": ["CSF Leak", "Cranial Nerve Injury", "Meningitis"],
+      "specificDetails": {
+        "positioning": "Modified supine",
+        "monitoring": ["Standard ASA", "Arterial Line", "Nerve Monitoring"],
+        "airwayManagement": "Specialized ETT placement",
+        "painManagement": ["Balanced technique"],
+        "fluidManagement": "Normal to slightly dry",
+        "specialConsiderations": [
+          "Surgical approach",
+          "CSF management",
+          "Cranial nerve monitoring"
+        ]
+      }
+    },
+    {
+      "procedureName": "Complex Laryngeal Surgery",
+      "estimatedDuration": 4.0,
+      "defaultAssessment": "ASA III",
+      "coaCategories": ["General Anesthesia", "Head and Neck"],
+      "commonTechniques": ["Jet Ventilation", "Shared Airway"],
+      "anatomicalLocation": "Airway",
+      "jaffeReference": "Chapter 28: ENT Surgery",
+      "commonComplications": ["Airway Fire", "Bleeding", "Laryngospasm"],
+      "specificDetails": {
+        "positioning": "Supine with neck extension",
+        "monitoring": ["Standard ASA", "Arterial Line"],
+        "airwayManagement": "Specialized technique",
+        "painManagement": ["TIVA"],
+        "fluidManagement": "Standard maintenance",
+        "specialConsiderations": [
+          "Laser safety",
+          "Shared airway",
+          "Post-op monitoring"
+        ]
+      }
+    },
+    {
+      "procedureName": "Complex Neck Dissection",
+      "estimatedDuration": 6.0,
+      "defaultAssessment": "ASA III",
+      "coaCategories": ["General Anesthesia", "Head and Neck"],
+      "commonTechniques": ["ETT", "Nerve Monitoring"],
+      "anatomicalLocation": "Neck",
+      "jaffeReference": "Chapter 28: ENT Surgery",
+      "commonComplications": ["Nerve Injury", "Vascular Injury", "Chyle Leak"],
+      "specificDetails": {
+        "positioning": "Supine with neck rotation",
+        "monitoring": ["Standard ASA", "Arterial Line", "Nerve Monitoring"],
+        "airwayManagement": "ETT",
+        "painManagement": ["Balanced technique"],
+        "fluidManagement": "Standard replacement",
+        "specialConsiderations": [
+          "Nerve preservation",
+          "Vascular control",
+          "Position-related issues"
+        ]
+      }
+    },
+    {
+      "procedureName": "Complex Skull Base Approach",
+      "estimatedDuration": 8.0,
+      "defaultAssessment": "ASA III",
+      "coaCategories": ["General Anesthesia", "Head and Neck", "Neurologic"],
+      "commonTechniques": ["ETT", "Nerve Monitoring"],
+      "anatomicalLocation": "Head",
+      "jaffeReference": "Chapter 28: ENT Surgery",
+      "commonComplications": ["CSF Leak", "Cranial Nerve Injury", "Meningitis"],
+      "specificDetails": {
+        "positioning": "Modified supine",
+        "monitoring": ["Standard ASA", "Arterial Line", "Nerve Monitoring"],
+        "airwayManagement": "Specialized ETT placement",
+        "painManagement": ["Balanced technique"],
+        "fluidManagement": "Normal to slightly dry",
+        "specialConsiderations": [
+          "Surgical approach",
+          "CSF management",
+          "Cranial nerve monitoring"
+        ]
+      }
+    },
+    {
+      "procedureName": "Complex Head and Neck Reconstruction",
+      "estimatedDuration": 10.0,
+      "defaultAssessment": "ASA III",
+      "coaCategories": ["General Anesthesia", "Head and Neck", "Plastic"],
+      "commonTechniques": ["ETT", "Arterial Line"],
+      "anatomicalLocation": "Head/Neck",
+      "jaffeReference": "Chapter 28: ENT Surgery",
+      "commonComplications": ["Flap Failure", "Airway Edema", "Bleeding"],
+      "specificDetails": {
+        "positioning": "Variable",
+        "monitoring": ["Standard ASA", "Arterial Line", "Temperature"],
+        "airwayManagement": "Secured ETT",
+        "painManagement": ["PCA", "Regional blocks"],
+        "fluidManagement": "Goal-directed therapy",
+        "specialConsiderations": [
+          "Flap monitoring",
+          "Airway management",
+          "Extended duration"
+        ]
+      }
+    },
+    {
+      "procedureName": "Complex Airway Reconstruction",
+      "estimatedDuration": 6.0,
+      "defaultAssessment": "ASA III",
+      "coaCategories": ["General Anesthesia", "Head and Neck", "Airway"],
+      "commonTechniques": ["Specialized Airway", "ECMO Standby"],
+      "anatomicalLocation": "Airway",
+      "jaffeReference": "Chapter 28: ENT Surgery",
+      "commonComplications": ["Airway Loss", "Bleeding", "Anastomotic Issues"],
+      "specificDetails": {
+        "positioning": "Supine with shoulder roll",
+        "monitoring": ["Standard ASA", "Arterial Line"],
+        "airwayManagement": "Complex shared airway",
+        "painManagement": ["Balanced technique"],
+        "fluidManagement": "Standard replacement",
+        "specialConsiderations": [
+          "Airway management plan",
+          "ECMO backup",
+          "Post-op monitoring"
+        ]
+      }
+    }
+  ],
+  "pediatric": [
+    {
+      "procedureName": "Complex Pediatric Airway",
+      "estimatedDuration": 3.0,
+      "defaultAssessment": "ASA III",
+      "coaCategories": ["General Anesthesia", "Pediatric", "Airway"],
+      "commonTechniques": ["Specialized Airway", "ECMO Standby"],
+      "anatomicalLocation": "Airway",
+      "jaffeReference": "Chapter 31: Pediatric Anesthesia",
+      "commonComplications": ["Airway Loss", "Hypoxemia", "Post-op Stridor"],
+      "specificDetails": {
+        "positioning": "Supine with shoulder roll",
+        "monitoring": ["Standard ASA", "Arterial Line"],
+        "airwayManagement": "Individualized approach",
+        "painManagement": ["TIVA"],
+        "fluidManagement": "Careful replacement",
+        "specialConsiderations": [
+          "Difficult airway plan",
+          "ECMO backup",
+          "Post-op monitoring"
+        ]
+      }
+    },
+    {
+      "procedureName": "Pediatric Solid Organ Surgery",
+      "estimatedDuration": 4.0,
+      "defaultAssessment": "ASA III",
+      "coaCategories": ["General Anesthesia", "Pediatric"],
+      "commonTechniques": ["ETT", "Arterial Line"],
+      "anatomicalLocation": "Abdomen",
+      "jaffeReference": "Chapter 31: Pediatric Anesthesia",
+      "commonComplications": ["Blood Loss", "Hypothermia", "Fluid Shifts"],
+      "specificDetails": {
+        "positioning": "Supine",
+        "monitoring": ["Standard ASA", "Arterial Line", "Temperature"],
+        "airwayManagement": "ETT",
+        "painManagement": ["Epidural", "Multimodal"],
+        "fluidManagement": "Goal-directed therapy",
+        "specialConsiderations": [
+          "Blood loss estimation",
+          "Temperature control",
+          "Glucose management"
+        ]
+      }
+    },
+    {
+      "procedureName": "Pediatric Neurosurgery",
+      "estimatedDuration": 5.0,
+      "defaultAssessment": "ASA III",
+      "coaCategories": ["General Anesthesia", "Pediatric", "Neurologic"],
+      "commonTechniques": ["TIVA", "Neuromonitoring"],
+      "anatomicalLocation": "Head",
+      "jaffeReference": "Chapter 31: Pediatric Anesthesia",
+      "commonComplications": ["ICP Changes", "Blood Loss", "Air Embolism"],
+      "specificDetails": {
+        "positioning": "Based on approach",
+        "monitoring": ["Standard ASA", "Arterial Line", "ICP"],
+        "airwayManagement": "ETT",
+        "painManagement": ["TIVA"],
+        "fluidManagement": "Brain relaxation goals",
+        "specialConsiderations": [
+          "ICP management",
+          "Position-related issues",
+          "Temperature control"
+        ]
+      }
+    },
+    {
+      "procedureName": "Complex Pediatric Oncology",
+      "estimatedDuration": 6.0,
+      "defaultAssessment": "ASA III",
+      "coaCategories": ["General Anesthesia", "Pediatric"],
+      "commonTechniques": ["ETT", "Multiple Lines"],
+      "anatomicalLocation": "Variable",
+      "jaffeReference": "Chapter 31: Pediatric Anesthesia",
+      "commonComplications": ["Blood Loss", "Metabolic Issues", "Tumor Lysis"],
+      "specificDetails": {
+        "positioning": "Based on tumor location",
+        "monitoring": ["Standard ASA", "Arterial Line", "CVP"],
+        "airwayManagement": "ETT",
+        "painManagement": ["Regional if possible", "Multimodal"],
+        "fluidManagement": "Careful replacement",
+        "specialConsiderations": [
+          "Tumor effects",
+          "Chemotherapy status",
+          "Infection risk"
+        ]
+      }
+    },
+    {
+      "procedureName": "Complex Pediatric Airway",
+      "estimatedDuration": 4.0,
+      "defaultAssessment": "ASA III",
+      "coaCategories": ["General Anesthesia", "Pediatric", "Airway"],
+      "commonTechniques": ["Specialized Airway", "ECMO Standby"],
+      "anatomicalLocation": "Airway",
+      "jaffeReference": "Chapter 31: Pediatric Anesthesia",
+      "commonComplications": ["Airway Loss", "Hypoxemia", "Post-op Stridor"],
+      "specificDetails": {
+        "positioning": "Supine with shoulder roll",
+        "monitoring": ["Standard ASA", "Arterial Line"],
+        "airwayManagement": "Individualized approach",
+        "painManagement": ["TIVA"],
+        "fluidManagement": "Careful replacement",
+        "specialConsiderations": [
+          "Difficult airway plan",
+          "ECMO backup",
+          "Post-op monitoring"
+        ]
+      }
+    },
+    {
+      "procedureName": "Complex Pediatric Trauma",
+      "estimatedDuration": 5.0,
+      "defaultAssessment": "ASA IV",
+      "coaCategories": ["General Anesthesia", "Pediatric", "Trauma"],
+      "commonTechniques": ["RSI", "Multiple Lines"],
+      "anatomicalLocation": "Multiple",
+      "jaffeReference": "Chapter 31: Pediatric Anesthesia",
+      "commonComplications": ["Shock", "Hypothermia", "Coagulopathy"],
+      "specificDetails": {
+        "positioning": "Based on injuries",
+        "monitoring": ["Standard ASA", "Arterial Line", "Temperature"],
+        "airwayManagement": "RSI",
+        "painManagement": ["Balanced technique"],
+        "fluidManagement": "Damage control resuscitation",
+        "specialConsiderations": [
+          "Age-specific issues",
+          "Temperature control",
+          "Blood loss estimation"
+        ]
+      }
+    },
+    {
+      "procedureName": "Complex Pediatric Cardiac",
+      "estimatedDuration": 6.0,
+      "defaultAssessment": "ASA IV",
+      "coaCategories": ["General Anesthesia", "Pediatric", "Cardiac"],
+      "commonTechniques": ["ETT", "Multiple Lines", "TEE"],
+      "anatomicalLocation": "Chest",
+      "jaffeReference": "Chapter 31: Pediatric Anesthesia",
+      "commonComplications": ["Low Cardiac Output", "Bleeding", "Arrhythmias"],
+      "specificDetails": {
+        "positioning": "Supine",
+        "monitoring": ["Standard ASA", "Arterial Line", "CVP", "TEE"],
+        "airwayManagement": "ETT",
+        "painManagement": ["High-dose opioids"],
+        "fluidManagement": "Complex CPB management",
+        "specialConsiderations": [
+          "Complex anatomy",
+          "CPB strategies",
+          "Post-repair physiology"
+        ]
+      }
+    },
+    {
+      "procedureName": "Complex Pediatric Neurosurgery",
+      "estimatedDuration": 6.0,
+      "defaultAssessment": "ASA III",
+      "coaCategories": ["General Anesthesia", "Pediatric", "Neurologic"],
+      "commonTechniques": ["TIVA", "Neuromonitoring"],
+      "anatomicalLocation": "Head",
+      "jaffeReference": "Chapter 31: Pediatric Anesthesia",
+      "commonComplications": ["ICP Changes", "Blood Loss", "Air Embolism"],
+      "specificDetails": {
+        "positioning": "Based on approach",
+        "monitoring": ["Standard ASA", "Arterial Line", "ICP"],
+        "airwayManagement": "ETT",
+        "painManagement": ["TIVA"],
+        "fluidManagement": "Brain relaxation goals",
+        "specialConsiderations": [
+          "ICP management",
+          "Position-related issues",
+          "Temperature control"
+        ]
+      }
+    },
+    {
+      "procedureName": "Complex Pediatric Airway",
+      "estimatedDuration": 4.0,
+      "defaultAssessment": "ASA III",
+      "coaCategories": ["General Anesthesia", "Pediatric", "Airway"],
+      "commonTechniques": ["Specialized Airway", "ECMO Standby"],
+      "anatomicalLocation": "Airway",
+      "jaffeReference": "Chapter 31: Pediatric Anesthesia",
+      "commonComplications": ["Airway Loss", "Hypoxemia", "Post-op Stridor"],
+      "specificDetails": {
+        "positioning": "Supine with shoulder roll",
+        "monitoring": ["Standard ASA", "Arterial Line"],
+        "airwayManagement": "Individualized approach",
+        "painManagement": ["TIVA"],
+        "fluidManagement": "Careful replacement",
+        "specialConsiderations": [
+          "Difficult airway plan",
+          "ECMO backup",
+          "Post-op monitoring"
+        ]
+      }
+    }
+  ],
+  "pediatric_subspecialty": [
+    {
+      "procedureName": "Complex Pediatric Cardiac Repair",
+      "estimatedDuration": 6.0,
+      "defaultAssessment": "ASA IV",
+      "coaCategories": ["General Anesthesia", "Pediatric", "Cardiac"],
+      "commonTechniques": ["ETT", "Multiple Lines", "TEE"],
+      "anatomicalLocation": "Chest",
+      "jaffeReference": "Chapter 31: Pediatric Anesthesia",
+      "commonComplications": ["Low Cardiac Output", "Bleeding", "Arrhythmias"],
+      "specificDetails": {
+        "positioning": "Supine",
+        "monitoring": ["Standard ASA", "Arterial Line", "CVP", "TEE"],
+        "airwayManagement": "ETT",
+        "painManagement": ["High-dose opioids"],
+        "fluidManagement": "Complex CPB management",
+        "specialConsiderations": [
+          "Complex anatomy",
+          "CPB strategies",
+          "Post-repair physiology"
+        ]
+      }
+    },
+    {
+      "procedureName": "Pediatric Heart-Lung Transplant",
+      "estimatedDuration": 8.0,
+      "defaultAssessment": "ASA IV",
+      "coaCategories": ["General Anesthesia", "Pediatric", "Cardiac"],
+      "commonTechniques": ["ETT", "Multiple Lines", "ECMO"],
+      "anatomicalLocation": "Chest",
+      "jaffeReference": "Chapter 31: Pediatric Anesthesia",
+      "commonComplications": ["Graft Dysfunction", "Bleeding", "Right Heart Failure"],
+      "specificDetails": {
+        "positioning": "Supine",
+        "monitoring": ["Standard ASA", "Arterial Line", "PA Catheter", "TEE"],
+        "airwayManagement": "ETT",
+        "painManagement": ["High-dose opioids"],
+        "fluidManagement": "Complex management",
+        "specialConsiderations": [
+          "Size matching",
+          "ECMO management",
+          "Immunosuppression"
+        ]
+      }
+    },
+    {
+      "procedureName": "Pediatric Cardiac Catheterization",
+      "estimatedDuration": 3.0,
+      "defaultAssessment": "ASA III",
+      "coaCategories": ["General Anesthesia", "Pediatric", "Cardiac"],
+      "commonTechniques": ["ETT", "Arterial Line"],
+      "anatomicalLocation": "Chest",
+      "jaffeReference": "Chapter 31: Pediatric Anesthesia",
+      "commonComplications": ["Arrhythmias", "Vessel Injury", "Contrast Reaction"],
+      "specificDetails": {
+        "positioning": "Supine",
+        "monitoring": ["Standard ASA", "Arterial Line"],
+        "airwayManagement": "ETT",
+        "painManagement": ["Balanced technique"],
+        "fluidManagement": "Careful hydration",
+        "specialConsiderations": [
+          "Radiation exposure",
+          "Contrast limits",
+          "Emergency backup"
+        ]
+      }
+    }
+  ],
+  "transplant": [
+    {
+      "procedureName": "Living Donor Kidney Transplant",
+      "estimatedDuration": 4.0,
+      "defaultAssessment": "ASA III",
+      "coaCategories": ["General Anesthesia", "Transplant"],
+      "commonTechniques": ["ETT", "Arterial Line"],
+      "anatomicalLocation": "Abdomen",
+      "jaffeReference": "Chapter 36: Transplant Anesthesia",
+      "commonComplications": ["Bleeding", "Vascular Issues", "Delayed Graft Function"],
+      "specificDetails": {
+        "positioning": "Supine",
+        "monitoring": ["Standard ASA", "Arterial Line", "CVP"],
+        "airwayManagement": "ETT",
+        "painManagement": ["Epidural", "IV PCA"],
+        "fluidManagement": "Goal-directed therapy",
+        "specialConsiderations": [
+          "Donor considerations",
+          "Timing coordination",
+          "Immunosuppression"
+        ]
+      }
+    },
+    {
+      "procedureName": "Pediatric Liver Transplant",
+      "estimatedDuration": 8.0,
+      "defaultAssessment": "ASA IV",
+      "coaCategories": ["General Anesthesia", "Transplant", "Pediatric"],
+      "commonTechniques": ["ETT", "Rapid Infuser"],
+      "anatomicalLocation": "Abdomen",
+      "jaffeReference": "Chapter 36: Transplant Anesthesia",
+      "commonComplications": ["Coagulopathy", "Metabolic Issues", "Vascular Problems"],
+      "specificDetails": {
+        "positioning": "Supine",
+        "monitoring": ["Standard ASA", "Arterial Line", "CVP"],
+        "airwayManagement": "ETT",
+        "painManagement": ["High-dose opioids"],
+        "fluidManagement": "Complex management",
+        "specialConsiderations": [
+          "Size matching",
+          "Metabolic derangements",
+          "Coagulation management"
+        ]
+      }
+    },
+    {
+      "procedureName": "Combined Organ Transplant",
+      "estimatedDuration": 12.0,
+      "defaultAssessment": "ASA IV",
+      "coaCategories": ["Transplant", "Complex Case"],
+      "commonTechniques": ["Multiple Monitoring", "Team Approach"],
+      "anatomicalLocation": "Multiple",
+      "jaffeReference": "Chapter 33: Organ Transplantation",
+      "commonComplications": ["Graft Dysfunction", "Massive Transfusion", "Metabolic Derangement"],
+      "specificDetails": {
+        "positioning": "Multiple positions",
+        "monitoring": ["Standard ASA", "Advanced Monitoring"],
+        "airwayManagement": "Secured airway",
+        "painManagement": ["Multimodal approach"],
+        "fluidManagement": "Complex protocol",
+        "specialConsiderations": [
+          "Timing coordination",
+          "Organ interaction",
+          "ICU planning"
+        ]
+      }
+    },
+    {
+      "procedureName": "Complex Multi-Visceral Transplant",
+      "estimatedDuration": 12.0,
+      "defaultAssessment": "ASA IV",
+      "coaCategories": ["General Anesthesia", "Transplant"],
+      "commonTechniques": ["ETT", "Multiple Lines", "Rapid Infuser"],
+      "anatomicalLocation": "Multiple",
+      "jaffeReference": "Chapter 36: Transplant Anesthesia",
+      "commonComplications": ["Massive Blood Loss", "Organ Dysfunction", "Coagulopathy"],
+      "specificDetails": {
+        "positioning": "Supine",
+        "monitoring": ["Standard ASA", "Arterial Line", "PA Catheter", "TEE"],
+        "airwayManagement": "ETT",
+        "painManagement": ["High-dose opioids"],
+        "fluidManagement": "Complex management",
+        "specialConsiderations": [
+          "Organ sequence",
+          "Reperfusion management",
+          "Coagulation control"
+        ]
+      }
+    },
+    {
+      "procedureName": "Complex Living Donor Surgery",
+      "estimatedDuration": 6.0,
+      "defaultAssessment": "ASA II",
+      "coaCategories": ["General Anesthesia", "Transplant"],
+      "commonTechniques": ["ETT", "Arterial Line"],
+      "anatomicalLocation": "Variable",
+      "jaffeReference": "Chapter 36: Transplant Anesthesia",
+      "commonComplications": ["Bleeding", "Organ Injury", "Post-op Pain"],
+      "specificDetails": {
+        "positioning": "Based on organ",
+        "monitoring": ["Standard ASA", "Arterial Line"],
+        "airwayManagement": "ETT",
+        "painManagement": ["Epidural", "Multimodal"],
+        "fluidManagement": "Goal-directed therapy",
+        "specialConsiderations": [
+          "Donor safety",
+          "Organ preservation",
+          "Pain management"
+        ]
+      }
+    },
+    {
+      "procedureName": "Complex Pediatric Transplant",
+      "estimatedDuration": 8.0,
+      "defaultAssessment": "ASA IV",
+      "coaCategories": ["General Anesthesia", "Transplant", "Pediatric"],
+      "commonTechniques": ["ETT", "Multiple Lines"],
+      "anatomicalLocation": "Variable",
+      "jaffeReference": "Chapter 36: Transplant Anesthesia",
+      "commonComplications": ["Size Mismatch", "Metabolic Issues", "Coagulopathy"],
+      "specificDetails": {
+        "positioning": "Based on organ",
+        "monitoring": ["Standard ASA", "Arterial Line", "CVP"],
+        "airwayManagement": "ETT",
+        "painManagement": ["High-dose opioids"],
+        "fluidManagement": "Complex management",
+        "specialConsiderations": [
+          "Size matching",
+          "Metabolic management",
+          "Temperature control"
+        ]
+      }
+    }
+  ],
+  "vascular": [
+    {
+      "procedureName": "Complex Thoracoabdominal Aneurysm",
+      "estimatedDuration": 8.0,
+      "defaultAssessment": "ASA IV",
+      "coaCategories": ["General Anesthesia", "Vascular"],
+      "commonTechniques": ["ETT", "Lumbar Drain", "Multiple Lines"],
+      "anatomicalLocation": "Chest/Abdomen",
+      "jaffeReference": "Chapter 27: Vascular Anesthesia",
+      "commonComplications": ["Spinal Cord Ischemia", "Organ Failure", "Coagulopathy"],
+      "specificDetails": {
+        "positioning": "Lateral decubitus",
+        "monitoring": ["Standard ASA", "Arterial Line", "PA Catheter", "SSEP/MEP"],
+        "airwayManagement": "DLT or Bronchial Blocker",
+        "painManagement": ["Epidural", "High-dose opioids"],
+        "fluidManagement": "Complex replacement",
+        "specialConsiderations": [
+          "Spinal cord protection",
+          "One-lung ventilation",
+          "Massive transfusion"
+        ]
+      }
+    },
+    {
+      "procedureName": "Complex Arch Reconstruction",
+      "estimatedDuration": 6.0,
+      "defaultAssessment": "ASA IV",
+      "coaCategories": ["General Anesthesia", "Vascular"],
+      "commonTechniques": ["ETT", "Multiple Lines", "TEE"],
+      "anatomicalLocation": "Chest",
+      "jaffeReference": "Chapter 27: Vascular Anesthesia",
+      "commonComplications": ["Stroke", "Bleeding", "Organ Malperfusion"],
+      "specificDetails": {
+        "positioning": "Supine",
+        "monitoring": ["Standard ASA", "Bilateral Arterial Lines", "TEE"],
+        "airwayManagement": "ETT",
+        "painManagement": ["High-dose opioids"],
+        "fluidManagement": "Complex management",
+        "specialConsiderations": [
+          "Cerebral perfusion",
+          "Temperature management",
+          "Coagulation control"
+        ]
+      }
+    },
+    {
+      "procedureName": "Complex Endovascular Procedures",
+      "estimatedDuration": 4.0,
+      "defaultAssessment": "ASA III",
+      "coaCategories": ["General Anesthesia", "Vascular"],
+      "commonTechniques": ["ETT", "Arterial Line"],
+      "anatomicalLocation": "Variable",
+      "jaffeReference": "Chapter 27: Vascular Anesthesia",
+      "commonComplications": ["Contrast Reactions", "Embolization", "Access Issues"],
+      "specificDetails": {
+        "positioning": "Supine",
+        "monitoring": ["Standard ASA", "Arterial Line"],
+        "airwayManagement": "ETT",
+        "painManagement": ["Balanced anesthesia"],
+        "fluidManagement": "Careful hydration",
+        "specialConsiderations": [
+          "Radiation exposure",
+          "Contrast limits",
+          "Anticoagulation"
+        ]
+      }
+    }
+  ],
+  "pain_management": [
+    {
+      "procedureName": "Complex Cancer Pain Intervention",
+      "estimatedDuration": 2.0,
+      "defaultAssessment": "ASA III",
+      "coaCategories": ["MAC/Sedation", "Pain Management"],
+      "commonTechniques": ["Fluoroscopy", "Neurolytic Blocks"],
+      "anatomicalLocation": "Variable",
+      "jaffeReference": "Chapter 37: Pain Management",
+      "commonComplications": ["Block Failure", "Neurolysis Complications", "Infection"],
+      "specificDetails": {
+        "positioning": "Based on target",
+        "monitoring": ["Standard ASA"],
+        "airwayManagement": "Conscious sedation",
+        "painManagement": ["Local anesthetic", "Neurolytic agents"],
+        "fluidManagement": "Standard maintenance",
+        "specialConsiderations": [
+          "Image guidance",
+          "Neurolytic spread",
+          "Cancer considerations"
+        ]
+      }
+    },
+    {
+      "procedureName": "Complex Spinal Intervention",
+      "estimatedDuration": 2.0,
+      "defaultAssessment": "ASA II",
+      "coaCategories": ["MAC/Sedation", "Pain Management"],
+      "commonTechniques": ["Fluoroscopy", "Radiofrequency"],
+      "anatomicalLocation": "Spine",
+      "jaffeReference": "Chapter 37: Pain Management",
+      "commonComplications": ["Nerve Injury", "Infection", "Bleeding"],
+      "specificDetails": {
+        "positioning": "Prone",
+        "monitoring": ["Standard ASA"],
+        "airwayManagement": "Conscious sedation",
+        "painManagement": ["Local anesthetic", "Light sedation"],
+        "fluidManagement": "Maintenance",
+        "specialConsiderations": [
+          "Image guidance",
+          "Sterile technique",
+          "Post-procedure monitoring"
+        ]
+      }
+    },
+    {
+      "procedureName": "Complex Regional Pain Block",
+      "estimatedDuration": 1.5,
+      "defaultAssessment": "ASA II",
+      "coaCategories": ["MAC/Sedation", "Pain Management"],
+      "commonTechniques": ["Ultrasound", "Nerve Stimulation"],
+      "anatomicalLocation": "Variable",
+      "jaffeReference": "Chapter 37: Pain Management",
+      "commonComplications": ["Block Failure", "Local Anesthetic Toxicity"],
+      "specificDetails": {
+        "positioning": "Based on block",
+        "monitoring": ["Standard ASA"],
+        "airwayManagement": "Conscious sedation",
+        "painManagement": ["Local anesthetic", "Adjuvants"],
+        "fluidManagement": "Standard maintenance",
+        "specialConsiderations": [
+          "Block selection",
+          "Anatomical variations",
+          "Patient education"
+        ]
+      }
+    },
+    {
+      "procedureName": "Complex Neuromodulation",
+      "estimatedDuration": 2.0,
+      "defaultAssessment": "ASA II",
+      "coaCategories": ["MAC/Sedation", "Pain Management"],
+      "commonTechniques": ["Fluoroscopy", "Nerve Stimulation"],
+      "anatomicalLocation": "Spine",
+      "jaffeReference": "Chapter 37: Pain Management",
+      "commonComplications": ["Lead Migration", "Infection", "CSF Leak"],
+      "specificDetails": {
+        "positioning": "Prone",
+        "monitoring": ["Standard ASA"],
+        "airwayManagement": "Conscious sedation",
+        "painManagement": ["Local anesthetic", "Light sedation"],
+        "fluidManagement": "Maintenance",
+        "specialConsiderations": [
+          "Lead placement",
+          "Trial stimulation",
+          "Patient cooperation"
+        ]
+      }
+    },
+    {
+      "procedureName": "Complex Interventional Pain",
+      "estimatedDuration": 1.5,
+      "defaultAssessment": "ASA II",
+      "coaCategories": ["MAC/Sedation", "Pain Management"],
+      "commonTechniques": ["Fluoroscopy", "Radiofrequency"],
+      "anatomicalLocation": "Variable",
+      "jaffeReference": "Chapter 37: Pain Management",
+      "commonComplications": ["Nerve Injury", "Bleeding", "Infection"],
+      "specificDetails": {
+        "positioning": "Based on target",
+        "monitoring": ["Standard ASA"],
+        "airwayManagement": "Conscious sedation",
+        "painManagement": ["Local anesthetic", "Light sedation"],
+        "fluidManagement": "Maintenance",
+        "specialConsiderations": [
+          "Image guidance",
+          "Sterile technique",
+          "Post-procedure monitoring"
+        ]
+      }
+    },
+    {
+      "procedureName": "Complex Cancer Pain Block",
+      "estimatedDuration": 2.0,
+      "defaultAssessment": "ASA III",
+      "coaCategories": ["MAC/Sedation", "Pain Management"],
+      "commonTechniques": ["Fluoroscopy", "Neurolytic"],
+      "anatomicalLocation": "Variable",
+      "jaffeReference": "Chapter 37: Pain Management",
+      "commonComplications": ["Block Failure", "Neurolysis Complications", "Bleeding"],
+      "specificDetails": {
+        "positioning": "Based on target",
+        "monitoring": ["Standard ASA"],
+        "airwayManagement": "Conscious sedation",
+        "painManagement": ["Local anesthetic", "Neurolytic agents"],
+        "fluidManagement": "Standard maintenance",
+        "specialConsiderations": [
+          "Image guidance",
+          "Neurolytic spread",
+          "Cancer considerations"
+        ]
+      }
+    },
+    {
+      "procedureName": "Complex Regional Pain Syndrome Management",
+      "estimatedDuration": 2.0,
+      "defaultAssessment": "ASA II",
+      "coaCategories": ["MAC/Sedation", "Pain Management"],
+      "commonTechniques": ["Fluoroscopy", "Sympathetic Blocks"],
+      "anatomicalLocation": "Variable",
+      "jaffeReference": "Chapter 37: Pain Management",
+      "commonComplications": ["Block Failure", "Local Anesthetic Toxicity", "Infection"],
+      "specificDetails": {
+        "positioning": "Based on target",
+        "monitoring": ["Standard ASA"],
+        "airwayManagement": "Conscious sedation",
+        "painManagement": ["Local anesthetic", "Light sedation"],
+        "fluidManagement": "Standard maintenance",
+        "specialConsiderations": [
+          "Sympathetic block technique",
+          "Patient cooperation",
+          "Post-procedure monitoring"
+        ]
+      }
+    },
+    {
+      "procedureName": "Complex Spinal Cord Stimulator Placement",
+      "estimatedDuration": 3.0,
+      "defaultAssessment": "ASA III",
+      "coaCategories": ["Pain Management", "Neurologic", "Regional"],
+      "commonTechniques": ["Fluoroscopy", "Local Anesthesia", "Conscious Sedation"],
+      "anatomicalLocation": "Spine",
+      "jaffeReference": "Chapter 39: Pain Management",
+      "commonComplications": ["Lead Migration", "Infection", "CSF Leak"],
+      "specificDetails": {
+        "positioning": "Prone",
+        "monitoring": ["Standard ASA", "Neurological Testing"],
+        "airwayManagement": "MAC/Conscious Sedation",
+        "painManagement": ["Local Anesthetic", "Minimal Sedation"],
+        "fluidManagement": "Standard maintenance",
+        "specialConsiderations": [
+          "Intraoperative testing",
+          "Patient cooperation",
+          "Sterile technique"
+        ]
+      }
+    },
+    {
+      "procedureName": "Advanced Intrathecal Pump Management",
+      "estimatedDuration": 2.5,
+      "defaultAssessment": "ASA III",
+      "coaCategories": ["Pain Management", "Regional"],
+      "commonTechniques": ["Fluoroscopy", "Sterile Technique"],
+      "anatomicalLocation": "Spine",
+      "jaffeReference": "Chapter 39: Pain Management",
+      "commonComplications": ["Pump Malfunction", "Medication Error", "Infection"],
+      "specificDetails": {
+        "positioning": "Lateral",
+        "monitoring": ["Standard ASA"],
+        "airwayManagement": "MAC",
+        "painManagement": ["Local Anesthetic"],
+        "fluidManagement": "Minimal",
+        "specialConsiderations": [
+          "Medication calculations",
+          "Pump programming",
+          "Infection prevention"
+        ]
+      }
+    },
+    {
+      "procedureName": "Complex Sympathetic Nerve Ablation",
+      "estimatedDuration": 2.0,
+      "defaultAssessment": "ASA II",
+      "coaCategories": ["Pain Management", "Regional"],
+      "commonTechniques": ["Fluoroscopy", "RF Ablation"],
+      "anatomicalLocation": "Various",
+      "jaffeReference": "Chapter 39: Pain Management",
+      "commonComplications": ["Neuritis", "Incomplete Block", "Vascular Injury"],
+      "specificDetails": {
+        "positioning": "Based on target",
+        "monitoring": ["Standard ASA"],
+        "airwayManagement": "MAC",
+        "painManagement": ["Local Anesthetic", "Minimal Sedation"],
+        "fluidManagement": "Minimal",
+        "specialConsiderations": [
+          "Anatomical variations",
+          "RF settings",
+          "Post-procedure care"
+        ]
+      }
+    }
+  ],
+  "obstetric": [
+    {
+      "procedureName": "Complex Maternal Cardiac",
+      "estimatedDuration": 4.0,
+      "defaultAssessment": "ASA IV",
+      "coaCategories": ["General Anesthesia", "Obstetric", "Cardiac"],
+      "commonTechniques": ["ETT", "TEE", "Fetal Monitoring"],
+      "anatomicalLocation": "Chest",
+      "jaffeReference": "Chapter 26: Obstetric Anesthesia",
+      "commonComplications": ["Fetal Distress", "Bleeding", "Heart Failure"],
+      "specificDetails": {
+        "positioning": "Left lateral tilt",
+        "monitoring": ["Standard ASA", "Arterial Line", "TEE", "FHR"],
+        "airwayManagement": "RSI",
+        "painManagement": ["Balanced technique"],
+        "fluidManagement": "Careful cardiac management",
+        "specialConsiderations": [
+          "Fetal monitoring",
+          "Uterine blood flow",
+          "Maternal cardiac function"
+        ]
+      }
+    },
+    {
+      "procedureName": "Complex Obstetric Hemorrhage",
+      "estimatedDuration": 2.0,
+      "defaultAssessment": "ASA IV",
+      "coaCategories": ["General Anesthesia", "Obstetric", "Emergency"],
+      "commonTechniques": ["RSI", "Massive Transfusion"],
+      "anatomicalLocation": "Pelvis",
+      "jaffeReference": "Chapter 26: Obstetric Anesthesia",
+      "commonComplications": ["Coagulopathy", "Shock", "Organ Failure"],
+      "specificDetails": {
+        "positioning": "Supine with left tilt",
+        "monitoring": ["Standard ASA", "Arterial Line", "CVP"],
+        "airwayManagement": "RSI",
+        "painManagement": ["General anesthesia"],
+        "fluidManagement": "Massive transfusion protocol",
+        "specialConsiderations": [
+          "Blood product ratio",
+          "Coagulopathy management",
+          "Hemodynamic stability"
+        ]
+      }
+    },
+    {
+      "procedureName": "Complex Maternal Disease",
+      "estimatedDuration": 3.0,
+      "defaultAssessment": "ASA III",
+      "coaCategories": ["General Anesthesia", "Obstetric"],
+      "commonTechniques": ["ETT", "Arterial Line"],
+      "anatomicalLocation": "Variable",
+      "jaffeReference": "Chapter 26: Obstetric Anesthesia",
+      "commonComplications": ["Disease Exacerbation", "Fetal Compromise", "Organ Dysfunction"],
+      "specificDetails": {
+        "positioning": "Left lateral tilt",
+        "monitoring": ["Standard ASA", "Arterial Line", "FHR"],
+        "airwayManagement": "Based on disease",
+        "painManagement": ["Individualized approach"],
+        "fluidManagement": "Disease-specific management",
+        "specialConsiderations": [
+          "Disease management",
+          "Fetal effects",
+          "Medication safety"
+        ]
+      }
+    },
+    {
+      "procedureName": "Complex Maternal Cardiac Surgery",
+      "estimatedDuration": 4.0,
+      "defaultAssessment": "ASA IV",
+      "coaCategories": ["General Anesthesia", "Obstetric", "Cardiac"],
+      "commonTechniques": ["ETT", "TEE", "Fetal Monitoring"],
+      "anatomicalLocation": "Chest",
+      "jaffeReference": "Chapter 26: Obstetric Anesthesia",
+      "commonComplications": ["Fetal Distress", "Bleeding", "Heart Failure"],
+      "specificDetails": {
+        "positioning": "Left lateral tilt",
+        "monitoring": ["Standard ASA", "Arterial Line", "TEE", "FHR"],
+        "airwayManagement": "RSI",
+        "painManagement": ["Balanced technique"],
+        "fluidManagement": "Careful cardiac management",
+        "specialConsiderations": [
+          "Fetal monitoring",
+          "Uterine blood flow",
+          "Maternal cardiac function"
+        ]
+      }
+    },
+    {
+      "procedureName": "Complex Obstetric Hemorrhage",
+      "estimatedDuration": 2.0,
+      "defaultAssessment": "ASA IV",
+      "coaCategories": ["General Anesthesia", "Obstetric", "Emergency"],
+      "commonTechniques": ["RSI", "Massive Transfusion"],
+      "anatomicalLocation": "Pelvis",
+      "jaffeReference": "Chapter 26: Obstetric Anesthesia",
+      "commonComplications": ["Coagulopathy", "Shock", "Organ Failure"],
+      "specificDetails": {
+        "positioning": "Supine with left tilt",
+        "monitoring": ["Standard ASA", "Arterial Line", "CVP"],
+        "airwayManagement": "RSI",
+        "painManagement": ["General anesthesia"],
+        "fluidManagement": "Massive transfusion protocol",
+        "specialConsiderations": [
+          "Blood product ratio",
+          "Coagulopathy management",
+          "Hemodynamic stability"
+        ]
+      }
+    },
+    {
+      "procedureName": "Complex Maternal Disease",
+      "estimatedDuration": 3.0,
+      "defaultAssessment": "ASA III",
+      "coaCategories": ["General Anesthesia", "Obstetric"],
+      "commonTechniques": ["ETT", "Arterial Line"],
+      "anatomicalLocation": "Variable",
+      "jaffeReference": "Chapter 26: Obstetric Anesthesia",
+      "commonComplications": ["Disease Exacerbation", "Fetal Compromise", "Organ Dysfunction"],
+      "specificDetails": {
+        "positioning": "Left lateral tilt",
+        "monitoring": ["Standard ASA", "Arterial Line", "FHR"],
+        "airwayManagement": "Based on disease",
+        "painManagement": ["Individualized approach"],
+        "fluidManagement": "Disease-specific management",
+        "specialConsiderations": [
+          "Disease management",
+          "Fetal effects",
+          "Medication safety"
+        ]
+      }
+    }
+  ],
+  "trauma": [
+    {
+      "procedureName": "Complex Multi-System Trauma",
+      "estimatedDuration": 6.0,
+      "defaultAssessment": "ASA IV",
+      "coaCategories": ["General Anesthesia", "Trauma", "Emergency"],
+      "commonTechniques": ["RSI", "Multiple Lines", "Massive Transfusion"],
+      "anatomicalLocation": "Multiple",
+      "jaffeReference": "Chapter 39: Trauma Anesthesia",
+      "commonComplications": ["Coagulopathy", "Acidosis", "Multi-Organ Failure"],
+      "specificDetails": {
+        "positioning": "Supine",
+        "monitoring": ["Standard ASA", "Arterial Line", "CVP"],
+        "airwayManagement": "RSI with inline stabilization",
+        "painManagement": ["General anesthesia"],
+        "fluidManagement": "Damage control resuscitation",
+        "specialConsiderations": [
+          "Prioritizing injuries",
+          "Blood product ratios",
+          "Temperature management"
+        ]
+      }
+    },
+    {
+      "procedureName": "Complex Neurologic Trauma",
+      "estimatedDuration": 4.0,
+      "defaultAssessment": "ASA IV",
+      "coaCategories": ["General Anesthesia", "Trauma", "Neurologic"],
+      "commonTechniques": ["RSI", "ICP Monitoring"],
+      "anatomicalLocation": "Head/Spine",
+      "jaffeReference": "Chapter 39: Trauma Anesthesia",
+      "commonComplications": ["Increased ICP", "Herniation", "Secondary Injury"],
+      "specificDetails": {
+        "positioning": "Neutral spine",
+        "monitoring": ["Standard ASA", "Arterial Line", "ICP"],
+        "airwayManagement": "RSI with inline stabilization",
+        "painManagement": ["TIVA"],
+        "fluidManagement": "Brain protection protocol",
+        "specialConsiderations": [
+          "C-spine precautions",
+          "Secondary brain injury",
+          "ICP management"
+        ]
+      }
+    },
+    {
+      "procedureName": "Complex Burn Management",
+      "estimatedDuration": 4.0,
+      "defaultAssessment": "ASA IV",
+      "coaCategories": ["General Anesthesia", "Trauma", "Burns"],
+      "commonTechniques": ["ETT", "Multiple Lines"],
+      "anatomicalLocation": "Multiple",
+      "jaffeReference": "Chapter 39: Trauma Anesthesia",
+      "commonComplications": ["Airway Compromise", "Fluid Shifts", "Temperature"],
+      "specificDetails": {
+        "positioning": "Based on burns",
+        "monitoring": ["Standard ASA", "Arterial Line", "Temperature"],
+        "airwayManagement": "Early intubation if needed",
+        "painManagement": ["Ketamine-based"],
+        "fluidManagement": "Parkland formula",
+        "specialConsiderations": [
+          "Airway assessment",
+          "Fluid requirements",
+          "Temperature control"
+        ]
+      }
+    }
+  ],
+  "cardiac": [
+    {
+      "procedureName": "Complex Aortic Root Reconstruction",
+      "estimatedDuration": 7.0,
+      "defaultAssessment": "ASA IV",
+      "coaCategories": ["General Anesthesia", "Cardiac"],
+      "commonTechniques": ["ETT", "TEE", "Multiple Lines"],
+      "anatomicalLocation": "Chest",
+      "jaffeReference": "Chapter 23: Cardiac Anesthesia",
+      "commonComplications": ["Bleeding", "Coronary Issues", "Heart Block"],
+      "specificDetails": {
+        "positioning": "Supine",
+        "monitoring": ["Standard ASA", "Arterial Line", "PA Catheter", "TEE"],
+        "airwayManagement": "ETT",
+        "painManagement": ["High-dose opioids"],
+        "fluidManagement": "Complex CPB management",
+        "specialConsiderations": [
+          "Root anatomy",
+          "Coronary reimplantation",
+          "Bleeding risk"
+        ]
+      }
+    },
+    {
+      "procedureName": "Complex Valve Reoperation",
+      "estimatedDuration": 6.0,
+      "defaultAssessment": "ASA IV",
+      "coaCategories": ["General Anesthesia", "Cardiac"],
+      "commonTechniques": ["ETT", "TEE", "Multiple Lines"],
+      "anatomicalLocation": "Chest",
+      "jaffeReference": "Chapter 23: Cardiac Anesthesia",
+      "commonComplications": ["Bleeding", "Heart Block", "Valve Dysfunction"],
+      "specificDetails": {
+        "positioning": "Supine",
+        "monitoring": ["Standard ASA", "Arterial Line", "PA Catheter", "TEE"],
+        "airwayManagement": "ETT",
+        "painManagement": ["High-dose opioids"],
+        "fluidManagement": "Complex CPB management",
+        "specialConsiderations": [
+          "Reentry considerations",
+          "Previous valve assessment",
+          "Bleeding risk"
+        ]
+      }
+    },
+    {
+      "procedureName": "Complex Aortic Root Surgery",
+      "estimatedDuration": 7.0,
+      "defaultAssessment": "ASA IV",
+      "coaCategories": ["General Anesthesia", "Cardiac"],
+      "commonTechniques": ["ETT", "TEE", "Multiple Lines"],
+      "anatomicalLocation": "Chest",
+      "jaffeReference": "Chapter 23: Cardiac Anesthesia",
+      "commonComplications": ["Bleeding", "Coronary Issues", "Heart Block"],
+      "specificDetails": {
+        "positioning": "Supine",
+        "monitoring": ["Standard ASA", "Arterial Line", "PA Catheter", "TEE"],
+        "airwayManagement": "ETT",
+        "painManagement": ["High-dose opioids"],
+        "fluidManagement": "Complex CPB management",
+        "specialConsiderations": [
+          "Root anatomy",
+          "Coronary reimplantation",
+          "Bleeding risk"
+        ]
+      }
+    },
+    {
+      "procedureName": "Complex Valve Surgery",
+      "estimatedDuration": 6.0,
+      "defaultAssessment": "ASA IV",
+      "coaCategories": ["General Anesthesia", "Cardiac"],
+      "commonTechniques": ["ETT", "TEE", "Multiple Lines"],
+      "anatomicalLocation": "Chest",
+      "jaffeReference": "Chapter 23: Cardiac Anesthesia",
+      "commonComplications": ["Heart Block", "Bleeding", "Air Embolism"],
+      "specificDetails": {
+        "positioning": "Supine",
+        "monitoring": ["Standard ASA", "Arterial Line", "PA Catheter", "TEE"],
+        "airwayManagement": "ETT",
+        "painManagement": ["High-dose opioids"],
+        "fluidManagement": "CPB management",
+        "specialConsiderations": [
+          "Valve assessment",
+          "Air removal",
+          "Conduction issues"
+        ]
+      }
+    },
+    {
+      "procedureName": "Complex Mechanical Support",
+      "estimatedDuration": 6.0,
+      "defaultAssessment": "ASA IV",
+      "coaCategories": ["General Anesthesia", "Cardiac"],
+      "commonTechniques": ["ETT", "TEE", "Multiple Lines"],
+      "anatomicalLocation": "Chest",
+      "jaffeReference": "Chapter 23: Cardiac Anesthesia",
+      "commonComplications": ["RV Failure", "Bleeding", "Device Issues"],
+      "specificDetails": {
+        "positioning": "Supine",
+        "monitoring": ["Standard ASA", "Arterial Line", "PA Catheter", "TEE"],
+        "airwayManagement": "ETT",
+        "painManagement": ["High-dose opioids"],
+        "fluidManagement": "Complex management",
+        "specialConsiderations": [
+          "Device selection",
+          "RV assessment",
+          "Coagulation management"
+        ]
+      }
+    }
+  ],
+  "neurologic": [
+    {
+      "procedureName": "Complex Skull Base Tumor",
+      "estimatedDuration": 8.0,
+      "defaultAssessment": "ASA III",
+      "coaCategories": ["General Anesthesia", "Neurologic"],
+      "commonTechniques": ["TIVA", "Nerve Monitoring"],
+      "anatomicalLocation": "Head",
+      "jaffeReference": "Chapter 30: Neuroanesthesia",
+      "commonComplications": ["CSF Leak", "Cranial Nerve Injury", "Meningitis"],
+      "specificDetails": {
+        "positioning": "Based on approach",
+        "monitoring": ["Standard ASA", "Arterial Line", "Nerve Monitoring"],
+        "airwayManagement": "ETT",
+        "painManagement": ["TIVA", "Scalp blocks"],
+        "fluidManagement": "Normal to slightly dry",
+        "specialConsiderations": [
+          "Surgical approach",
+          "CSF management",
+          "Cranial nerve monitoring"
+        ]
+      }
+    },
+    {
+      "procedureName": "Complex Spine Deformity",
+      "estimatedDuration": 8.0,
+      "defaultAssessment": "ASA III",
+      "coaCategories": ["General Anesthesia", "Neurologic", "Spine"],
+      "commonTechniques": ["TIVA", "SSEP/MEP"],
+      "anatomicalLocation": "Spine",
+      "jaffeReference": "Chapter 30: Neuroanesthesia",
+      "commonComplications": ["Cord Injury", "Major Blood Loss", "Visual Loss"],
+      "specificDetails": {
+        "positioning": "Prone",
+        "monitoring": ["Standard ASA", "Arterial Line", "SSEP/MEP"],
+        "airwayManagement": "ETT secured for prone",
+        "painManagement": ["TIVA", "Multimodal"],
+        "fluidManagement": "Blood loss management",
+        "specialConsiderations": [
+          "PION risk",
+          "Neuromonitoring needs",
+          "Position-related issues"
+        ]
+      }
+    },
+    {
+      "procedureName": "Complex Vascular Malformation",
+      "estimatedDuration": 6.0,
+      "defaultAssessment": "ASA III",
+      "coaCategories": ["General Anesthesia", "Neurologic"],
+      "commonTechniques": ["TIVA", "Burst Suppression"],
+      "anatomicalLocation": "Head",
+      "jaffeReference": "Chapter 30: Neuroanesthesia",
+      "commonComplications": ["Hemorrhage", "Vasospasm", "Stroke"],
+      "specificDetails": {
+        "positioning": "Head fixation",
+        "monitoring": ["Standard ASA", "Arterial Line", "EEG"],
+        "airwayManagement": "ETT",
+        "painManagement": ["TIVA"],
+        "fluidManagement": "Euvolemia",
+        "specialConsiderations": [
+          "Temporary clip time",
+          "Brain protection",
+          "Blood pressure control"
+        ]
+      }
+    },
+    {
+      "procedureName": "Complex Brain Tumor Surgery",
+      "estimatedDuration": 8.0,
+      "defaultAssessment": "ASA III",
+      "coaCategories": ["General Anesthesia", "Neurologic"],
+      "commonTechniques": ["TIVA", "Brain Mapping"],
+      "anatomicalLocation": "Head",
+      "jaffeReference": "Chapter 30: Neuroanesthesia",
+      "commonComplications": ["Brain Swelling", "Seizures", "Neurologic Deficit"],
+      "specificDetails": {
+        "positioning": "Based on approach",
+        "monitoring": ["Standard ASA", "Arterial Line", "Neuromonitoring"],
+        "airwayManagement": "ETT",
+        "painManagement": ["TIVA", "Scalp blocks"],
+        "fluidManagement": "Brain relaxation goals",
+        "specialConsiderations": [
+          "Brain mapping needs",
+          "Seizure management",
+          "Position-related issues"
+        ]
+      }
+    },
+    {
+      "procedureName": "Complex Spine Deformity",
+      "estimatedDuration": 8.0,
+      "defaultAssessment": "ASA III",
+      "coaCategories": ["General Anesthesia", "Neurologic", "Spine"],
+      "commonTechniques": ["TIVA", "SSEP/MEP"],
+      "anatomicalLocation": "Spine",
+      "jaffeReference": "Chapter 30: Neuroanesthesia",
+      "commonComplications": ["Cord Injury", "Major Blood Loss", "Visual Loss"],
+      "specificDetails": {
+        "positioning": "Prone",
+        "monitoring": ["Standard ASA", "Arterial Line", "SSEP/MEP"],
+        "airwayManagement": "ETT secured for prone",
+        "painManagement": ["TIVA", "Multimodal"],
+        "fluidManagement": "Blood loss management",
+        "specialConsiderations": [
+          "PION risk",
+          "Neuromonitoring needs",
+          "Position-related issues"
+        ]
+      }
+    },
+    {
+      "procedureName": "Complex Vascular Malformation",
+      "estimatedDuration": 6.0,
+      "defaultAssessment": "ASA III",
+      "coaCategories": ["General Anesthesia", "Neurologic"],
+      "commonTechniques": ["TIVA", "Burst Suppression"],
+      "anatomicalLocation": "Head",
+      "jaffeReference": "Chapter 30: Neuroanesthesia",
+      "commonComplications": ["Hemorrhage", "Vasospasm", "Stroke"],
+      "specificDetails": {
+        "positioning": "Head fixation",
+        "monitoring": ["Standard ASA", "Arterial Line", "EEG"],
+        "airwayManagement": "ETT",
+        "painManagement": ["TIVA"],
+        "fluidManagement": "Euvolemia",
+        "specialConsiderations": [
+          "Temporary clip time",
+          "Brain protection",
+          "Blood pressure control"
+        ]
+      }
+    }
+  ],
+  "complex_pediatric_regional_block": [
+    {
+      "procedureName": "Complex Pediatric Regional Block",
+      "estimatedDuration": 1.5,
+      "defaultAssessment": "ASA II",
+      "coaCategories": ["Pediatric", "Regional", "Pain Management"],
+      "commonTechniques": ["Ultrasound", "Light Sedation"],
+      "anatomicalLocation": "Various",
+      "jaffeReference": "Chapter 42: Pediatric Regional Anesthesia",
+      "commonComplications": ["Block Failure", "Local Toxicity", "Vascular Puncture"],
+      "specificDetails": {
+        "positioning": "Based on block",
+        "monitoring": ["Standard ASA", "Block Assessment"],
+        "airwayManagement": "Sedation support",
+        "painManagement": ["Local Anesthetic", "Minimal Sedation"],
+        "fluidManagement": "Age-appropriate",
+        "specialConsiderations": [
+          "Weight-based dosing",
+          "Cooperation strategy",
+          "Parent presence"
+        ]
+      }
+    }
+  ],
+  "pediatric_diagnostic_procedure": [
+    {
+      "procedureName": "Pediatric Diagnostic Procedure",
+      "estimatedDuration": 2.0,
+      "defaultAssessment": "ASA III",
+      "coaCategories": ["Pediatric", "Diagnostic"],
+      "commonTechniques": ["Deep Sedation", "Immobilization"],
+      "anatomicalLocation": "Various",
+      "jaffeReference": "Chapter 41: Pediatric Anesthesia",
+      "commonComplications": ["Movement", "Airway Event", "Delayed Recovery"],
+      "specificDetails": {
+        "positioning": "Procedure specific",
+        "monitoring": ["Standard ASA", "Capnography"],
+        "airwayManagement": "Spontaneous ventilation",
+        "painManagement": ["Titrated sedation"],
+        "fluidManagement": "NPO deficit plus maintenance",
+        "specialConsiderations": [
+          "Imaging requirements",
+          "Movement control",
+          "Recovery criteria"
+        ]
+      }
+    }
+  ],
+  "complex_pediatric_pain_management": [
+    {
+      "procedureName": "Complex Pediatric Pain Management",
+      "estimatedDuration": 1.0,
+      "defaultAssessment": "ASA II",
+      "coaCategories": ["Pediatric", "Pain Management"],
+      "commonTechniques": ["Multimodal Approach", "Regional"],
+      "anatomicalLocation": "Various",
+      "jaffeReference": "Chapter 43: Pediatric Pain Management",
+      "commonComplications": ["Inadequate Relief", "Side Effects", "Compliance Issues"],
+      "specificDetails": {
+        "positioning": "Various",
+        "monitoring": ["Standard ASA"],
+        "airwayManagement": "As needed",
+        "painManagement": ["Multimodal approach"],
+        "fluidManagement": "Age-appropriate",
+        "specialConsiderations": [
+          "Age-appropriate assessment",
+          "Family education",
+          "Follow-up plan"
+        ]
+      }
+    }
+  },
+  {
+    "procedureName": "Complex Anatomical Variant Surgery",
+    "estimatedDuration": 5.0,
+    "defaultAssessment": "ASA III",
+    "coaCategories": ["General Anesthesia", "Pediatric"],
+    "commonTechniques": ["Advanced Airway", "Specialized Monitoring"],
+    "anatomicalLocation": "Various",
+    "jaffeReference": "Chapter 41: Pediatric Anesthesia",
+    "commonComplications": ["Difficult Airway", "Unexpected Response", "Anatomical Challenges"],
+    "specificDetails": {
+      "positioning": "Case specific",
+      "monitoring": ["Standard ASA", "Specialized Monitoring"],
+      "airwayManagement": "Individualized plan",
+      "painManagement": ["Multimodal approach"],
+      "fluidManagement": "Careful titration",
+      "specialConsiderations": [
+        "Preop imaging review",
+        "Backup plans",
+        "Team communication"
+      ]
+    }
+  },
+  {
+    "procedureName": "Multiple Congenital Anomaly Procedure",
+    "estimatedDuration": 6.0,
+    "defaultAssessment": "ASA IV",
+    "coaCategories": ["Pediatric", "Complex Case"],
+    "commonTechniques": ["Multisystem Management", "Careful Positioning"],
+    "anatomicalLocation": "Various",
+    "jaffeReference": "Chapter 41: Pediatric Anesthesia",
+    "commonComplications": ["System Interaction", "Positioning Issues", "Multiple Organ Effects"],
+    "specificDetails": {
+      "positioning": "Protected positioning",
+      "monitoring": ["Standard ASA", "Multiple Systems"],
+      "airwayManagement": "Based on anomalies",
+    },
+    {
+      "procedureName": "Complex Trauma-Reconstruction",
+      "estimatedDuration": 8.0,
+      "defaultAssessment": "ASA III",
+      "coaCategories": ["Trauma", "Reconstructive"],
+      "commonTechniques": ["Staged Approach", "Multiple Procedures"],
+      "anatomicalLocation": "Various",
+      "jaffeReference": "Chapter 35: Trauma",
+      "commonComplications": ["Compartment Syndrome", "Infection", "Failed Reconstruction"],
+      "specificDetails": {
+        "positioning": "Multiple positions",
+        "monitoring": ["Standard ASA", "Specific Monitoring"],
+        "airwayManagement": "Secured airway",
+        "painManagement": ["Regional", "Multimodal"],
+        "fluidManagement": "Careful balance",
+        "specialConsiderations": [
+          "Staging strategy",
+          "Temperature management",
+          "Recovery planning"
+        ]
+      }
+    },
+    {
+      "procedureName": "Multi-Specialty Intervention",
+      "estimatedDuration": 10.0,
+      "defaultAssessment": "ASA IV",
+      "coaCategories": ["Complex Case", "Multiple Specialties"],
+      "commonTechniques": ["Team Coordination", "Position Changes"],
+      "anatomicalLocation": "Multiple",
+      "jaffeReference": "Chapter 38: Complex Cases",
+      "commonComplications": ["Timing Issues", "Position Injuries", "System Complications"],
+      "specificDetails": {
+        "positioning": "Multiple changes",
+        "monitoring": ["Standard ASA", "Multiple Systems"],
+        "airwayManagement": "Secured access",
+        "painManagement": ["Comprehensive approach"],
+        "fluidManagement": "Careful tracking",
+        "specialConsiderations": [
+          "Team communication",
+          "Transition planning",
+          "Equipment coordination"
+        ]
+      }
+    }
+  ]
+}
